@@ -39,7 +39,7 @@ The student is able to identify the use of various reasons for encoding / decodi
 
 The student is able to clearly articulate whether this model and data would work well for following another object (dog, cat, car, etc.) instead of a human and if not, what changes would be required.
 
-# Trained Model
+# Trained TensorFlow model
 
 The file is in the correct format (.h5) and runs without errors.
 
