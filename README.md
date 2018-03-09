@@ -43,5 +43,10 @@ The student is able to clearly articulate whether this model and data would work
 
 The file is in the correct format (.h5) and runs without errors.
 
+# Neural Network Accuracy
+
+The neural network should obtain an accuracy greater than or equal to 40% (0.40) using the Intersection over Union (IoU) metric.
 
 # Future Enhancements
+
+* Point 1
