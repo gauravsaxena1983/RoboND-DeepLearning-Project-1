@@ -4,10 +4,18 @@
 *.pyo
 *.pyc
 *.mp4
+
+#Rover Project Data
 /rec1_dataset/IMG
 /rec2_dataset/IMG
 /rec3_dataset/IMG
 /test_dataset/IMG
+
+#FCN Project Data
+/data/train_combined
+/data/validation
+/data/sample_evaluation_data
+
 .ipynb_checkpoints
 .DS_Store
 __pycache__
