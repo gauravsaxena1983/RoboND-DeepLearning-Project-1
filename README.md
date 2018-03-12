@@ -30,22 +30,23 @@ NVIDIA GEFORCE 940MX (2GB Memory 384 CUDA cores)
 
 Ubuntu 16.04 LTS
 
-NVIDIA Drivers 390.30
-NVIDIA CUDA 8.0
-NVIDIA cuDNN 5.1
+* NVIDIA Drivers 390.30
+* NVIDIA CUDA 8.0
+* NVIDIA cuDNN 5.1
 
-Python 3.x
-Tensorflow GPU 1.2.1
-NumPy 1.11
-SciPy 0.17.0
-eventlet
-Flask
-h5py
-PIL
-python-socketio
-scikit-image
-transforms3d
-PyQt4/Pyqt5
+choose not to use Anaconda, you must install the following frameworks and packages on your system:
+* Python 3.x
+* Tensorflow GPU 1.2.1
+* NumPy 1.11
+* SciPy 0.17.0
+* eventlet 
+* Flask
+* h5py
+* PIL
+* python-socketio
+* scikit-image
+* transforms3d
+* PyQt4/Pyqt5
 
 <p align="center"> <img src="./misc/nvidia-smi.png"> </p>
 
