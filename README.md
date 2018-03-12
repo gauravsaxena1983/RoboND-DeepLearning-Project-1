@@ -25,16 +25,22 @@ The student shall also provide a graph, table, diagram, illustration or figure f
 
 # Software & Hardware used for training:
 
-Lenovo Yoga 520 laptop (i7-8550U CPU @ 1.8GHz 15GB Memory)
-NVIDIA GEFORCE 940MX (2GB Memory 384 CUDA cores)
+In order to get the best learning from the lab I have decided to use my own GPU enabled hardware to do the learning instead of using AWS Udacity ready made image.
 
-Ubuntu 16.04 LTS
+I have used the following hardware:
 
+* Lenovo Yoga 520 laptop (i7-8550U CPU @ 1.8GHz 15GB Memory)
+* NVIDIA GEFORCE 940MX (2GB Memory 384 CUDA cores)
+
+And the following OS/Drivers:
+
+* Ubuntu 16.04 LTS
 * NVIDIA Drivers 390.30
 * NVIDIA CUDA 8.0
 * NVIDIA cuDNN 5.1
 
-choose not to use Anaconda, you must install the following frameworks and packages on your system:
+And the following frameworks and packages:
+
 * Python 3.x
 * Tensorflow GPU 1.2.1
 * NumPy 1.11
@@ -47,6 +53,8 @@ choose not to use Anaconda, you must install the following frameworks and packag
 * scikit-image
 * transforms3d
 * PyQt4/Pyqt5
+
+It took me very long time to figure out the right version of CUDA/cuDNN that will match the selected version of TensorFlow-GPU then later I found this link which clearly states the versions matrix.
 
 <p align="center"> <img src="./misc/nvidia-smi.png"> </p>
 
