@@ -56,6 +56,9 @@ And the following frameworks and packages:
 
 It took me very long time to figure out the right version of CUDA/cuDNN that will match the selected version of TensorFlow-GPU then later I found this link which clearly states the versions matrix.
 
+
+
+When I used batch size of 64 and 32 I was getting "ResourceExhaustedError : OOM when allocating tensor with shape.." error. I was able to resolve it by reducing the batch size to 16. Below screen shot showing the utilization details of the GPU:
 <p align="center"> <img src="./misc/nvidia-smi.png"> </p>
 
 # Neural Network Parameters
