@@ -23,6 +23,18 @@ The student clearly explains each layer of the network architecture and the role
 
 The student shall also provide a graph, table, diagram, illustration or figure for the overall network to serve as a reference for the reviewer.
 
+# Software & Hardware used for training:
+
+* Lenovo Yoga 520 laptop
+* NVIDIA GEFORCE
+
+* Ubuntu 16.04 LTS
+* TensorFlow GPU 1.2.0
+* NVIDIA CUDA 8.0
+* NVIDIA cuDNN 5.1
+
+<p align="center"> <img src="./misc/nvidia-smi.png"> </p>
+
 # Neural Network Parameters
 
 The student explains their neural network parameters including the values selected and how these values were obtained (i.e. how was hyper tuning performed? Brute force, etc.) Hyper parameters include, but are not limited to:
