@@ -25,11 +25,12 @@ The student shall also provide a graph, table, diagram, illustration or figure f
 
 # Software & Hardware used for training:
 
-* Lenovo Yoga 520 laptop
-* NVIDIA GEFORCE 940MX 2GB Memory
+* Lenovo Yoga 520 laptop (i7-8550U CPU @ 1.8GHz 15GB Memory)
+* NVIDIA GEFORCE 940MX (2GB Memory 384 CUDA cores)
 
 * Ubuntu 16.04 LTS
 * TensorFlow GPU 1.2.0
+* NVIDIA Drivers 390.30
 * NVIDIA CUDA 8.0
 * NVIDIA cuDNN 5.1
 
