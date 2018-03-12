@@ -54,7 +54,7 @@ And the following frameworks and packages:
 * transforms3d
 * PyQt4/Pyqt5
 
-It took me very long time to figure out the right version of CUDA/cuDNN that will match the selected version of TensorFlow-GPU then later I found this link which clearly states the versions matrix.
+It took me very long time to figure out the right version of CUDA/cuDNN that will match the selected version of TensorFlow-GPU then later I found this link which clearly states the required CUDA/cuDNN versions:
 
 https://www.tensorflow.org/install/install_sources
 
