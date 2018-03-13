@@ -62,15 +62,18 @@ https://www.tensorflow.org/install/install_sources
 
 # Neural Network Hyper Parameters
 
-## Batch_size: 
-
-(number of training samples/images that get propagated through the network in a single pass.)
+* **batch_size:** number of training samples/images that get propagated through the network in a single pass.
 
 When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to 30. Below screen shot showing the utilization details of the GPU using this batch size:
 <p align="center"> <img src="./misc/nvidia-smi.png"> </p>
 
-## Workers
-(maximum number of processes to spin up. This can affect your training speed and is dependent on your hardware.)
+* **workers:** maximum number of processes to spin up.
+
+* **num_epochs:** number of times the entire training dataset gets propagated through the network.
+
+* **steps_per_epoch:** number of batches of training images that go through the network in 1 epoch. We have provided you with a default value. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size.
+
+* **validation_steps:** number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset. We have provided you with a default value for this as well.
 
   My plan to figureout the other right parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good brute force runs as many as needed. Below are the captures of each attempt along with the related training curve:
 
