@@ -58,11 +58,24 @@ It took me very long time to figure out the right version of CUDA/cuDNN that wil
 
 https://www.tensorflow.org/install/install_sources
 
-When I used batch size of 64 and 32 I was getting "ResourceExhaustedError : OOM when allocating tensor with shape.." error. I was able to resolve it by reducing the batch size to 16. Below screen shot showing the utilization details of the GPU:
-<p align="center"> <img src="./misc/nvidia-smi.png"> </p>
+
 
 # Neural Network Hyper Parameters
 
+## Batch_size: 
+
+(number of training samples/images that get propagated through the network in a single pass.)
+
+When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to 30. Below screen shot showing the utilization details of the GPU using this batch size:
+<p align="center"> <img src="./misc/nvidia-smi.png"> </p>
+
+  My plan to figureout the other right parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good brute force runs as many as needed. Below are the captures of each attempt along with the related training curve:
+
+## Workers
+
+I left Workers parameter unchanged since it is optmized 
+
+## 
 | **Parameter** | **Value** |
 |:--|:--:|
 | learning_rate | 0.01 |
