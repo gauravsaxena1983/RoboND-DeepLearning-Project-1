@@ -61,14 +61,14 @@ https://www.tensorflow.org/install/install_sources
 When I used batch size of 64 and 32 I was getting "ResourceExhaustedError : OOM when allocating tensor with shape.." error. I was able to resolve it by reducing the batch size to 16. Below screen shot showing the utilization details of the GPU:
 <p align="center"> <img src="./misc/nvidia-smi.png"> </p>
 
-# Neural Network Parameters
+# Neural Network Hyper Parameters
 
 | **Parameter** | **Value** |
-|:--:|:--:|
-| learning_rate | 0 |
-| batch_size | 0 |
-| num_epochs | 0 |
-| steps_per_epoch | 200 |
+|:--|:--:|
+| learning_rate | 0.01 |
+| batch_size | 30 |
+| num_epochs | 15 |
+| steps_per_epoch | 50 |
 | validation_steps | 50 |
 | workers | 2 |
 
