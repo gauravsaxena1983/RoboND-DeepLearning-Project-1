@@ -7,7 +7,7 @@
 
 In this project we will train a deep neural network to identify and track a target in simulation. So-called “follow me” applications like this are key to many fields of robotics and the very same techniques you apply here could be extended to scenarios like advanced cruise control in autonomous vehicles or human-robot collaboration in industry.
 
-<p align="center"> <img src="./misc/simulator.png"> </p>
+<p align="center"> <img src="./docs/misc/simulator.png"> </p>
 
 
 
@@ -65,7 +65,7 @@ https://www.tensorflow.org/install/install_sources
 * **batch_size:** number of training samples/images that get propagated through the network in a single pass.
 
 When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to 30. Below screen shot showing the utilization details of the GPU using this batch size:
-<p align="center"> <img src="./misc/nvidia-smi.png"> </p>
+<p align="center"> <img src="./docs/misc/nvidia-smi.png"> </p>
 
 * **workers:** maximum number of processes to spin up.
 
