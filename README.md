@@ -63,6 +63,16 @@ When I used batch size of 64 and 32 I was getting "ResourceExhaustedError : OOM 
 
 # Neural Network Parameters
 
+|--|--|
+|learning_rate|0|
+|batch_size|0|
+|num_epochs|0|
+|steps_per_epoch|200|
+|validation_steps| 50|
+|workers|2|
+
+
+
 The student explains their neural network parameters including the values selected and how these values were obtained (i.e. how was hyper tuning performed? Brute force, etc.) Hyper parameters include, but are not limited to:
 
 Epoch
