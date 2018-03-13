@@ -64,12 +64,12 @@ When I used batch size of 64 and 32 I was getting "ResourceExhaustedError : OOM 
 # Neural Network Parameters
 
 |--|--|
-|learning_rate|0|
-|batch_size|0|
-|num_epochs|0|
-|steps_per_epoch|200|
-|validation_steps| 50|
-|workers|2|
+| learning_rate | 0 |
+| batch_size | 0 |
+| num_epochs | 0 |
+| steps_per_epoch | 200 |
+| validation_steps | 50 |
+| workers | 2 |
 
 
 
