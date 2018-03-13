@@ -69,11 +69,10 @@ https://www.tensorflow.org/install/install_sources
 When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to 30. Below screen shot showing the utilization details of the GPU using this batch size:
 <p align="center"> <img src="./misc/nvidia-smi.png"> </p>
 
-  My plan to figureout the other right parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good brute force runs as many as needed. Below are the captures of each attempt along with the related training curve:
-
 ## Workers
+(maximum number of processes to spin up. This can affect your training speed and is dependent on your hardware.)
 
-I left Workers parameter unchanged since it is optmized 
+  My plan to figureout the other right parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good brute force runs as many as needed. Below are the captures of each attempt along with the related training curve:
 
 ## 
 | **Parameter** | **Value** |
