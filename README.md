@@ -58,6 +58,9 @@ It took me very long time to figure out the right version of CUDA/cuDNN that wil
 
 https://www.tensorflow.org/install/install_sources
 
+# Data Recording
+
+I did not record any data from simulator, I was able to do all required steps using the provided Training, Validation, and Sample Evaluation Data.
 
 
 # Neural Network Hyper Parameters
@@ -70,16 +73,15 @@ https://www.tensorflow.org/install/install_sources
 <p align="center"> <img src="./docs/misc/cpu_0_workers.png"> </p>
 <p align="center"> <img src="./docs/misc/cpu_8_workers.png"> </p>
 
-* **num_epochs:** number of times the entire training dataset gets propagated through the network. I trided multiple numbers ranging from 20 to 4 and found that in most of cases 10 epochs are good enough to get lowest possible loss values.
+My plan to figureout the rest of parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good number of brute force runs as needed. Below are the captures of each attempt along with the related training curve:
 
+* **num_epochs:** number of times the entire training dataset gets propagated through the network.
 
+* **steps_per_epoch:** number of batches of training images that go through the network in 1 epoch. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size.
 
-* **steps_per_epoch:** number of batches of training images that go through the network in 1 epoch. We have provided you with a default value. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size.
+* **validation_steps:** number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset.
 
-* **validation_steps:** number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset. We have provided you with a default value for this as well.
-
-  My plan to figureout the other right parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good brute force runs as many as needed. Below are the captures of each attempt along with the related training curve:
-
+  
 ## Paramter Set 1:
 | **Parameter** | **Value** |
 |:--|:--:|
