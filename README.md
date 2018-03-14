@@ -82,13 +82,13 @@ https://www.tensorflow.org/install/install_sources
 
 ## Paramter Set 1:
 | **Parameter** | **Value** | **Image**|
-|:--|:--:|
-| learning_rate | 0.01 |-|
-| batch_size | 20 |-|
-| num_epochs | 10 |-|
-| steps_per_epoch | 100 |-|
-| validation_steps | 50 |-|
-| workers | 8 |-|
+|:--|:--:|:--:|
+| learning_rate | 0.01 | |
+| batch_size | 20 | |
+| num_epochs | 10 | |
+| steps_per_epoch | 100 | |
+| validation_steps | 50 | |
+| workers | 8 | |
 
 <p align="center"> <img src="./docs/misc/train_curve_1.png"> </p>
 
