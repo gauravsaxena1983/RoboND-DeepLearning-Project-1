@@ -65,12 +65,14 @@ https://www.tensorflow.org/install/install_sources
 * **batch_size:** number of training samples/images that get propagated through the network in a single pass. When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the GPU using this batch size:
 <p align="center"> <img src="./docs/misc/nvidia-smi.png"> </p>
 
-* **workers:** maximum number of processes to spin up. I used 8 workers to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs during training:
+* **workers:** maximum number of processes to spin up. I used 8 workers to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs when no work is done and when training:
 
 <p align="center"> <img src="./docs/misc/cpu_0_workers.png"> </p>
 <p align="center"> <img src="./docs/misc/cpu_8_workers.png"> </p>
 
-* **num_epochs:** number of times the entire training dataset gets propagated through the network.
+* **num_epochs:** number of times the entire training dataset gets propagated through the network. I trided multiple numbers ranging from 20 to 4 and found that in most of cases 10 epochs are good enough to get lowest possible loss values.
+
+
 
 * **steps_per_epoch:** number of batches of training images that go through the network in 1 epoch. We have provided you with a default value. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size.
 
@@ -78,17 +80,17 @@ https://www.tensorflow.org/install/install_sources
 
   My plan to figureout the other right parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good brute force runs as many as needed. Below are the captures of each attempt along with the related training curve:
 
-## 
-| **Parameter** | **Value** |
+## Paramter Set 1:
+| **Parameter** | **Value** |<p align="center"> <img src="./docs/misc/train_curve_1.png"> </p>|
 |:--|:--:|
-| learning_rate | 0.01 |
-| batch_size | 20 |
-| num_epochs | 10 |
-| steps_per_epoch | 100 |
-| validation_steps | 50 |
-| workers | 8 |
+| learning_rate | 0.01 |-|
+| batch_size | 20 |-|
+| num_epochs | 10 |-|
+| steps_per_epoch | 100 |-|
+| validation_steps | 50 |-|
+| workers | 8 |-|
 
-<p align="center"> <img src="./docs/misc/train_curve_1.png"> </p>
+
 
 
 The student explains their neural network parameters including the values selected and how these values were obtained (i.e. how was hyper tuning performed? Brute force, etc.) Hyper parameters include, but are not limited to:
