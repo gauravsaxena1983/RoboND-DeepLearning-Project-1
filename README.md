@@ -29,7 +29,7 @@ In order to get the best learning from the lab I have decided to use my own GPU 
 
 I have used the following hardware:
 
-* Lenovo Yoga 520 laptop (i7-8550U CPU @ 1.8GHz 15GB Memory)
+* Lenovo Yoga 520 laptop (i7-8550U CPU @ 1.8GHz 16GB Memory)
 * NVIDIA GEFORCE 940MX (2GB Memory 384 CUDA cores)
 
 And the following OS/Drivers:
@@ -62,12 +62,12 @@ https://www.tensorflow.org/install/install_sources
 
 # Neural Network Hyper Parameters
 
-* **batch_size:** number of training samples/images that get propagated through the network in a single pass.
-
-When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to 30. Below screen shot showing the utilization details of the GPU using this batch size:
+* **batch_size:** number of training samples/images that get propagated through the network in a single pass. When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the GPU using this batch size:
 <p align="center"> <img src="./docs/misc/nvidia-smi.png"> </p>
 
-* **workers:** maximum number of processes to spin up.
+* **workers:** maximum number of processes to spin up. I used 8 workers to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs during training:
+
+<p align="center"> <img src="./docs/misc/sysmon_8workers.png"> </p>
 
 * **num_epochs:** number of times the entire training dataset gets propagated through the network.
 
@@ -81,12 +81,13 @@ When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedEr
 | **Parameter** | **Value** |
 |:--|:--:|
 | learning_rate | 0.01 |
-| batch_size | 30 |
-| num_epochs | 15 |
-| steps_per_epoch | 50 |
+| batch_size | 20 |
+| num_epochs | 10 |
+| steps_per_epoch | 100 |
 | validation_steps | 50 |
-| workers | 2 |
+| workers | 8 |
 
+<p align="center"> <img src="./docs/misc/train_curve_1.png"> </p>
 
 
 The student explains their neural network parameters including the values selected and how these values were obtained (i.e. how was hyper tuning performed? Brute force, etc.) Hyper parameters include, but are not limited to:
