@@ -91,7 +91,6 @@ https://www.tensorflow.org/install/install_sources
 | workers | 8 |
 | final_score | **20%** |
 
-|**Training Curve 1**|
 |:--:|
 | <p align="center"> <img src="./docs/misc/train_curve_1.png"> </p> |
 
@@ -106,7 +105,6 @@ https://www.tensorflow.org/install/install_sources
 | workers | 8 |
 | final_score | **40%** |
 
-|**Training Curve**|
 |:--:|
 | <p align="center"> <img src="./docs/misc/train_curve_2.png"> </p> |
 
