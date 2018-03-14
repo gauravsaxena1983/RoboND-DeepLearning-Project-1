@@ -90,9 +90,7 @@ https://www.tensorflow.org/install/install_sources
 | validation_steps | 50 |
 | workers | 8 |
 | final_score | **20%** |
-
-|:--:|
-| <p align="center"> <img src="./docs/misc/train_curve_1.png"> </p> |
+<p align="center"> <img src="./docs/misc/train_curve_1.png"> </p>
 
 ## Paramter Set 2:
 | **Parameter** | **Value** |
@@ -104,9 +102,7 @@ https://www.tensorflow.org/install/install_sources
 | validation_steps | 50 |
 | workers | 8 |
 | final_score | **40%** |
-
-|:--:|
-| <p align="center"> <img src="./docs/misc/train_curve_2.png"> </p> |
+<p align="center"> <img src="./docs/misc/train_curve_2.png"> </p>
 
 
 
