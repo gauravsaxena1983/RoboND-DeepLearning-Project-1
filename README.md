@@ -66,6 +66,7 @@ https://www.tensorflow.org/install/install_sources
 
 I did not record any data from simulator, I was able to do all required steps using the provided Training, Validation, and Sample Evaluation Data.
 
+
 # Fully Convolutional Network (FCN) Layers
 
 ## Separable Convolutions Layer
@@ -91,8 +92,64 @@ def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
     return output_layer
 ```
 
-## Code:
+## Bilinear Upsampling Layer
 
+```python
+def bilinear_upsample(input_layer):
+    output_layer = BilinearUpSampling2D((2,2))(input_layer)
+    return output_layer
+```
+## Encoder Block
+
+```python
+def encoder_block(input_layer, filters, strides):
+    
+    # Create a separable convolution layer using the separable_conv2d_batchnorm() function.
+    output_layer = separable_conv2d_batchnorm(input_layer, filters, strides)
+    
+    return output_layer
+```
+
+## Decoder Block
+
+```python
+def decoder_block(small_ip_layer, large_ip_layer, filters):
+    
+    # Upsample the small input layer using the bilinear_upsample() function.
+    upsampled_small_ip_layer = bilinear_upsample(small_ip_layer)
+    
+    # Concatenate the upsampled and large input layers using layers.concatenate
+    output_layer = layers.concatenate([upsampled_small_ip_layer, large_ip_layer])
+    
+    # Add some number of separable convolution layers
+    output_layer = separable_conv2d_batchnorm( output_layer, filters, strides=1)
+    output_layer = separable_conv2d_batchnorm( output_layer, filters, strides=1)
+    
+    return output_layer
+```
+
+## FCN Model
+
+```python
+def fcn_model(inputs, num_classes):
+    
+    # Add Encoder Blocks. 
+    # Remember that with each encoder layer, the depth of your model (the number of filters) increases.
+    layer01 = encoder_block(inputs , filters=32 , strides=2)
+    layer02 = encoder_block(layer01, filters=64 , strides=2)
+    layer03 = encoder_block(layer02, filters=128, strides=2)
+
+    # Add 1x1 Convolution layer using conv2d_batchnorm().
+    layer04 = conv2d_batchnorm(layer03, filters=256, kernel_size=1, strides=1)
+    
+    # Add the same number of Decoder Blocks as the number of Encoder Blocks
+    layer05 = decoder_block(layer04, layer02, filters=128 )
+    layer06 = decoder_block(layer05, layer01, filters=64  )
+    x       = decoder_block(layer06, inputs , filters=32  )
+    
+    # The function returns the output layer of your model. "x" is the final layer obtained from the last decoder_block()
+    return layers.Conv2D(num_classes, 1, activation='softmax', padding='same')(x)
+```
 
 
 # Neural Network Hyper Parameters
