@@ -229,37 +229,48 @@ The file is in the correct format (.h5) and runs without errors.
 <p align="center"> <img src="./docs/misc/img_7.png"> </p>
 <p align="center"> <img src="./docs/misc/img_8.png"> </p>
 <p align="center"> <img src="./docs/misc/img_9.png"> </p>
+
 # Evaluation
 
 ### Scores for while the quad is following behind the target. 
+```
 number of validation samples intersection over the union evaulated on 542
 average intersection over union for background is 0.9946233635164803
 average intersection over union for other people is 0.35554427678476996
 average intersection over union for the hero is 0.9043385744932508
 number true positives: 539, number false positives: 0, number false negatives: 0
-
+```
 ### Scores for images while the quad is on patrol and the target is not visable
+```
 number of validation samples intersection over the union evaulated on 270
 average intersection over union for background is 0.9852442884819069
 average intersection over union for other people is 0.6481070478441583
 average intersection over union for the hero is 0.0
 number true positives: 0, number false positives: 145, number false negatives: 0
-
+```
 # This score measures how well the neural network can detect the target from far away
+```
 number of validation samples intersection over the union evaulated on 322
 average intersection over union for background is 0.9960849086994017
 average intersection over union for other people is 0.4355130043960404
 average intersection over union for the hero is 0.25951798030115997
 number true positives: 150, number false positives: 6, number false negatives: 151
+```
 
 ### Sum all the true positives, etc from the three datasets to get a weight for the score
+```
 0.6952573158425832
+```
 
 ### The IoU for the dataset that never includes the hero is excluded from grading
+```
 0.581928277397
+```
 
 ### And the final grade score is 
-**0.404589892156**
+```
+0.404589892156
+```
 
 # Future Enhancements
 
