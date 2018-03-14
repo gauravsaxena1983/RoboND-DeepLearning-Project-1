@@ -88,9 +88,20 @@ https://www.tensorflow.org/install/install_sources
 | num_epochs | 10 | |
 | steps_per_epoch | 100 | |
 | validation_steps | 50 | |
+| final_score | **20%** |
 | workers | 8 | <p align="center"> <img src="./docs/misc/train_curve_1.png"> </p> |
 
 
+## Paramter Set 2:
+| **Parameter** | **Value** | **Image**|
+|:--|:--:|:--:|
+| learning_rate | 0.01 | |
+| batch_size | 20 | |
+| num_epochs | 15 | |
+| steps_per_epoch | 100 | |
+| validation_steps | 50 | |
+| final_score | **40%** |
+| workers | 8 | <p align="center"> <img src="./docs/misc/train_curve_2.png"> </p> |
 
 
 
