@@ -81,26 +81,36 @@ https://www.tensorflow.org/install/install_sources
   My plan to figureout the other right parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good brute force runs as many as needed. Below are the captures of each attempt along with the related training curve:
 
 ## Paramter Set 1:
-| **Parameter** | **Value** | **Training Curve**|
-|:--|:--:|:--:|
+| **Parameter** | **Value** |
+|:--|:--:|
 | learning_rate | 0.01 |
 | batch_size | 20 |
 | num_epochs | 10 |
 | steps_per_epoch | 100 |
 | validation_steps | 50 |
 | workers | 8 |
-| final_score | **20%** | <p align="center"> <img src="./docs/misc/train_curve_1.png"> </p> |
+| final_score | **20%** |
+
+|**Training Curve 1**|
+|:--:|
+| <p align="center"> <img src="./docs/misc/train_curve_1.png"> </p> |
 
 ## Paramter Set 2:
-| **Parameter** | **Value** | **Training Curve**|
-|:--|:--:||
-| learning_rate | 0.01 ||
-| batch_size | 20 ||
-| num_epochs | 15 ||
-| steps_per_epoch | 100 ||
-| validation_steps | 50 ||
-| workers | 8 ||
-| final_score | **40%** | <p align="center"> <img src="./docs/misc/train_curve_2.png"> </p> |
+| **Parameter** | **Value** |
+|:--|:--:|
+| learning_rate | 0.01 |
+| batch_size | 20 |
+| num_epochs | 15 |
+| steps_per_epoch | 100 |
+| validation_steps | 50 |
+| workers | 8 |
+| final_score | **40%** |
+
+|**Training Curve**|
+|:--:|
+| <p align="center"> <img src="./docs/misc/train_curve_2.png"> </p> |
+
+
 
 
 The student explains their neural network parameters including the values selected and how these values were obtained (i.e. how was hyper tuning performed? Brute force, etc.) Hyper parameters include, but are not limited to:
