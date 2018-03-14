@@ -206,7 +206,7 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 | steps_per_epoch | 100 |
 | validation_steps | 50 |
 | workers | 8 |
-| final_score | **%** |
+| final_score | **42%** |
 <p align="center"> <img src="./docs/misc/train_curve_3.png"> </p>
 
 # Trained TensorFlow model
