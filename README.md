@@ -81,7 +81,7 @@ https://www.tensorflow.org/install/install_sources
   My plan to figureout the other right parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good brute force runs as many as needed. Below are the captures of each attempt along with the related training curve:
 
 ## Paramter Set 1:
-| **Parameter** | **Value** |-|
+| **Parameter** | **Value** | **Image**|
 |:--|:--:|
 | learning_rate | 0.01 |-|
 | batch_size | 20 |-|
