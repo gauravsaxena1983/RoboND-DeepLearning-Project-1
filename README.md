@@ -67,8 +67,8 @@ https://www.tensorflow.org/install/install_sources
 
 * **workers:** maximum number of processes to spin up. I used 8 workers to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs during training:
 
-<p align="center"> <img src="./docs/misc/cpu_0workers.png"> </p>
-<p align="center"> <img src="./docs/misc/cpu_8workers.png"> </p>
+<p align="center"> <img src="./docs/misc/cpu_0_workers.png"> </p>
+<p align="center"> <img src="./docs/misc/cpu_8_workers.png"> </p>
 
 * **num_epochs:** number of times the entire training dataset gets propagated through the network.
 
