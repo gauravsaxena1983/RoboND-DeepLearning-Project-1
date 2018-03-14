@@ -16,6 +16,7 @@
 /data/validation
 /data/sample_evaluation_data
 /data/train
+/data/runs
 
 .ipynb_checkpoints
 .DS_Store
