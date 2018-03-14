@@ -88,9 +88,9 @@ https://www.tensorflow.org/install/install_sources
 | num_epochs | 10 | |
 | steps_per_epoch | 100 | |
 | validation_steps | 50 | |
-| workers | 8 | |
+| workers | 8 | <p align="center"> <img src="./docs/misc/train_curve_1.png"> </p> |
 
-<p align="center"> <img src="./docs/misc/train_curve_1.png"> </p>
+
 
 
 
