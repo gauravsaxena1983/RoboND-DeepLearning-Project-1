@@ -4,21 +4,11 @@
 
 ## Writeup by Muthanna A. Attyah
 ## Mar 2018
+## [Rubric](https://review.udacity.com/#!/rubrics/1155/view) Points
 
 In this project we will train a deep neural network to identify and track a target in simulation. So-called “follow me” applications like this are key to many fields of robotics and the very same techniques you apply here could be extended to scenarios like advanced cruise control in autonomous vehicles or human-robot collaboration in industry.
 
 <p align="center"> <img src="./docs/misc/simulator.png"> </p>
-
-
-
-## [Rubric](https://review.udacity.com/#!/rubrics/1155/view) Points
-
-This means all network architecture should be explained The student clearly explains each layer of the network architecture and the role that it plays in the overall network. The student can demonstrate the benefits and/or drawbacks of different network architectures pertaining to this project and can justify the current network with factual data. Any choice of configurable parameters should also be explained in the network architecture.
-
-The student demonstrates a clear understanding of 1 by 1 convolutions and where/when/how it should be used.
-The student demonstrates a clear understanding of a fully connected layer and where/when/how it should be used.
-
-The student is able to clearly articulate whether this model and data would work well for following another object (dog, cat, car, etc.) instead of a human and if not, what changes would be required.
 
 
 # Software & Hardware used for training:
@@ -142,20 +132,38 @@ def fcn_model(inputs, num_classes):
     
     # Add Encoder Blocks. 
     # Remember that with each encoder layer, the depth of your model (the number of filters) increases.
+    print("Inputs  shape:",inputs.shape, "  \tImage Size in Pixels")
+    
     layer01 = encoder_block(inputs , filters=32 , strides=2)
+    print("layer01 shape:",layer01.shape, "  \tEncoder Block 1")
+    
     layer02 = encoder_block(layer01, filters=64 , strides=2)
+    print("layer02 shape:",layer02.shape, "  \tEncoder Block 2")
+    
     layer03 = encoder_block(layer02, filters=128, strides=2)
+    print("layer03 shape:",layer03.shape, "\tEncoder Block 3")
 
     # Add 1x1 Convolution layer using conv2d_batchnorm().
     layer04 = conv2d_batchnorm(layer03, filters=256, kernel_size=1, strides=1)
+    print("layer04 shape:",layer04.shape, "\t1x1 Conv Layer")
     
     # Add the same number of Decoder Blocks as the number of Encoder Blocks
     layer05 = decoder_block(layer04, layer02, filters=128 )
-    layer06 = decoder_block(layer05, layer01, filters=64  )
-    x       = decoder_block(layer06, inputs , filters=32  )
+    print("layer05 shape:",layer05.shape, "\tDecoder Block 1")
     
-    # The function returns the output layer of your model. "x" is the final layer obtained from the last decoder_block()
-    return layers.Conv2D(num_classes, 1, activation='softmax', padding='same')(x)
+    layer06 = decoder_block(layer05, layer01, filters=64  )
+    print("layer06 shape:",layer06.shape, "  \tDecoder Block 2")
+    
+    layer07 = decoder_block(layer06, inputs , filters=32  )
+    print("layer07 shape:",layer07.shape, "\tDecoder Block 3")
+    
+    # The function returns the output layer of your model. 
+    # "layer07" is the final layer obtained from the last decoder_block()
+    
+    outputs = layers.Conv2D(num_classes, 1, activation='softmax', padding='same')(layer07)
+    print("Outputs shape:",outputs.shape, "\tOutput Size in Pixel")
+    
+    return outputs
 ```
 
 
