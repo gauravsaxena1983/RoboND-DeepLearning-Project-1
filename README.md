@@ -232,7 +232,7 @@ in case of AWS, I used **4 workers** to utilize the 4 CPUs.
 
 number of batches of training images that go through the network in 1 epoch. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size. 
 
-When Using data set 1 and laptop: steps_per_epoch=4131/20=206.55 **aprox. 207**
+When Using data set 1 and laptop batch=20: steps_per_epoch=4131/20=206.55 **aprox. 207**
 
 When Using data set 1 and AWS batch=100: steps_per_epoch=4131/100=41.31 **aprox. 41**
 
@@ -240,7 +240,7 @@ When Using data set 1 and AWS batch=100: steps_per_epoch=4131/100=41.31 **aprox.
 
 number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset.
 
-When Using data set 1 and laptop: validation_steps=1184/20=59.2 **aprox. 60**
+When Using data set 1 and laptop batch=20: validation_steps=1184/20=59.2 **aprox. 60**
 
 When Using data set 1 and AWS batch=100: validation_steps=1184/100=11.84 **aprox. 12**
 
