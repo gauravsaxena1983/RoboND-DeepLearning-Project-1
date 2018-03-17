@@ -251,11 +251,31 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
     <tr>
       <th align="center">Parameter</th>
       <th align="center">Value</th>
-      <th align="center">Value</th>
+      <th align="center">Training Curve</th>
     </tr>
     <tr>
       <td align="right">learning_rate</td>
       <td align="right">0.003</td>
+    </tr>
+    <tr>
+      <td align="right">batch_size</td>
+      <td align="right">20</td>
+    </tr>
+    <tr>
+      <td align="right">num_epochs</td>
+      <td align="right">400</td>
+    </tr>
+    <tr>
+      <td align="right">steps_per_epoch</td>
+      <td align="right">50</td>
+    </tr>
+    <tr>
+      <td align="right">validation_steps</td>
+      <td align="right">50</td>
+    </tr>
+    <tr>
+      <td align="right">workers</td>
+      <td align="right">8</td>
     </tr>
   </tbody>
 </table>
