@@ -15,19 +15,26 @@ In this project we will train a deep neural network to identify and track a targ
 
 In order to get the best learning from the lab I have decided to use my own GPU enabled hardware to do the learning instead of using AWS Udacity ready made image.
 
-I have used the following hardware:
+I have used the following **laptop** hardware:
 
 * Lenovo Yoga 520 laptop (i7-8550U CPU @ 1.8GHz 16GB Memory)
 * NVIDIA GEFORCE 940MX (2GB Memory 384 CUDA cores)
 
-And the following OS/Drivers:
+And the following laptop OS/Drivers:
 
 * Ubuntu 16.04 LTS
 * NVIDIA Drivers 390.30
 * NVIDIA CUDA 8.0
 * NVIDIA cuDNN 5.1
 
-And the following frameworks and packages:
+Also to speed-up the training I used the following **AWS** instance:
+
+* p2.xlarge instance
+* AMI: Udacity Robotics Deep Learning Laboratory 
+* 4 x Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+* NVIDIA GPU GK210GL [Tesla K80]
+
+The following frameworks and packages were installed on both Laptop & AWS instance:
 
 * Python 3.x
 * Tensorflow GPU 1.2.1
