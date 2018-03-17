@@ -13,21 +13,28 @@ In this project we will train a deep neural network to identify and track a targ
 
 # Software & Hardware used for training:
 
-In order to get the best learning from the lab I have decided to use my own GPU enabled hardware to do the learning instead of using AWS Udacity ready made image.
+In order to get the best learning from the lab I have decided to use both my own GPU enabled laptop hardware and AWS instance to do the learning.
 
-I have used the following hardware:
+I have used the following **laptop** hardware:
 
 * Lenovo Yoga 520 laptop (i7-8550U CPU @ 1.8GHz 16GB Memory)
 * NVIDIA GEFORCE 940MX (2GB Memory 384 CUDA cores)
 
-And the following OS/Drivers:
+And the following laptop OS/Drivers:
 
 * Ubuntu 16.04 LTS
 * NVIDIA Drivers 390.30
 * NVIDIA CUDA 8.0
 * NVIDIA cuDNN 5.1
 
-And the following frameworks and packages:
+Also to speed-up the training I used the following **AWS** instance:
+
+* p2.xlarge instance
+* AMI: Udacity Robotics Deep Learning Laboratory 
+* 4 x Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+* NVIDIA GPU GK210GL [Tesla K80]
+
+The following frameworks and packages were installed on both Laptop & AWS instance:
 
 * Python 3.x
 * Tensorflow GPU 1.2.1
@@ -42,7 +49,7 @@ And the following frameworks and packages:
 * transforms3d
 * PyQt4/Pyqt5
 
-It took me very long time to figure out the right version of CUDA/cuDNN that will match the selected version of TensorFlow-GPU then later I found this link which clearly states the required CUDA/cuDNN versions:
+For the Laptop installation, It took me very long time to figure out the right version of CUDA/cuDNN that will match the selected version of TensorFlow-GPU then later I found this link which clearly states the required CUDA/cuDNN versions:
 
 https://www.tensorflow.org/install/install_sources
 
@@ -203,8 +210,13 @@ Outputs shape: (?, 160, 160, 3) 	Output Size in Pixel
 
 ## Batch Size:
 
-number of training samples/images that get propagated through the network in a single pass. When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the GPU using this batch size:
-<p align="center"> <img src="./docs/misc/nvidia-smi.png"> </p>
+number of training samples/images that get propagated through the network in a single pass. On my Laptop, when I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the Laptop GPU using this batch size:
+<p align="center"> <img src="./docs/misc/nvidia-smi_lt.png"> </p>
+
+On AWS, I was able to use bigger batches:
+
+Below screen shot showing the utilization details of the AWS GPU using this batch size:
+<p align="center"> <img src="./docs/misc/nvidia-smi_aws.png"> </p>
 
 ## Workers:
 
@@ -241,58 +253,13 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     <img src="./docs/misc/train_curve_1.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.01</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
-    <tr><td align="left">num_epochs</td>      <td align="center">40</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
-    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
-    <tr><td align="left">final_score</td>     <td align="center">42%</td></tr>
-</tbody></table>
-
-<table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 2</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
-    <img src="./docs/misc/train_curve_2.png"></td></tr>
-    <tr><td align="left">learning_rate</td>   <td align="center">0.001</td></tr>
-    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
     <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">200</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">200</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">207</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">60</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
+    <tr><td align="left">train_loss</td>      <td align="center">0.0181</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0321</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">40%</td></tr>
-</tbody></table>
-
-<table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 3</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
-    <img src="./docs/misc/train_curve_3.png"></td></tr>
-    <tr><td align="left">learning_rate</td>   <td align="center">0.005</td></tr>
-    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
-    <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">100</td></tr>
-    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
-    <tr><td align="left">final_score</td>     <td align="center">41%</td></tr>
-</tbody></table>
-
-<table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 4</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
-    <img src="./docs/misc/train_curve_4.png"></td></tr>
-    <tr><td align="left">learning_rate</td>   <td align="center">0.003</td></tr>
-    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
-    <tr><td align="left">num_epochs</td>      <td align="center">400</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">50</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
-    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
-    <tr><td align="left">final_score</td>     <td align="center">39%</td></tr>
 </tbody></table>
 
 
