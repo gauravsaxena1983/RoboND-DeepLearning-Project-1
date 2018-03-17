@@ -172,66 +172,70 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 
 * **validation_steps:** number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset.
 
-  
-## Paramter Set 1:
-| **Parameter** | **Value** |
-|:--|:--:|
-| learning_rate | 0.01 |
-| batch_size | 20 |
-| num_epochs | 10 |
-| steps_per_epoch | 100 |
-| validation_steps | 50 |
-| workers | 8 |
-| final_score | **20%** |
-<p align="center"> <img src="./docs/misc/train_curve_1.png"> </p>
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 1</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <img src="./docs/misc/train_curve_1.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.01</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">10</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">20%</td></tr>
+</tbody></table>
 
-## Paramter Set 2:
-| **Parameter** | **Value** |
-|:--|:--:|
-| learning_rate | 0.01 |
-| batch_size | 20 |
-| num_epochs | 15 |
-| steps_per_epoch | 100 |
-| validation_steps | 50 |
-| workers | 8 |
-| final_score | **40%** |
-<p align="center"> <img src="./docs/misc/train_curve_2.png"> </p>
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 2</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <img src="./docs/misc/train_curve_2.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.01</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">15</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">40%</td></tr>
+</tbody></table>
 
-## Paramter Set 3:
-| **Parameter** | **Value** |
-|:--|:--:|
-| learning_rate | 0.01 |
-| batch_size | 20 |
-| num_epochs | 40 |
-| steps_per_epoch | 100 |
-| validation_steps | 50 |
-| workers | 8 |
-| final_score | **42%** |
-<p align="center"> <img src="./docs/misc/train_curve_3.png"> </p>
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 3</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <img src="./docs/misc/train_curve_3.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.01</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">40</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">42%</td></tr>
+</tbody></table>
 
-## Paramter Set 4:
-| **Parameter** | **Value** |
-|:--|:--:|
-| learning_rate | 0.001 |
-| batch_size | 20 |
-| num_epochs | 100 |
-| steps_per_epoch | 200 |
-| validation_steps | 200 |
-| workers | 8 |
-| final_score | **40%** |
-<p align="center"> <img src="./docs/misc/train_curve_4.png"> </p>
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 4</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <img src="./docs/misc/train_curve_4.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.001</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">200</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">200</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">40%</td></tr>
+</tbody></table>
 
-## Paramter Set 5:
-| **Parameter** | **Value** |
-|:--|:--:|
-| learning_rate | 0.005 |
-| batch_size | 20 |
-| num_epochs | 100 |
-| steps_per_epoch | 100 |
-| validation_steps | 100 |
-| workers | 8 |
-| final_score | **41%** |
-<p align="center"> <img src="./docs/misc/train_curve_5.png"> </p>
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 5</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <img src="./docs/misc/train_curve_5.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.005</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">100</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">41%</td></tr>
+</tbody></table>
 
 <table><tbody>
     <tr><th align="center" colspan="3">Parameters Set 6</td></tr>
@@ -244,7 +248,7 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
     <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">39%</td></tr>
-  </tbody></table>
+</tbody></table>
 
 # Trained TensorFlow model
 
