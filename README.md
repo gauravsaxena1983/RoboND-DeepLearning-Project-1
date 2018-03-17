@@ -143,6 +143,8 @@ The FCN model will have"
 * 3 Decoder Blocks
 * 1 Softmax activation using same padding
 
+I have added a print function after each block to help showing the size of each layer in the model.
+
 ```python
 def fcn_model(inputs, num_classes):
     
