@@ -230,19 +230,19 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 | steps_per_epoch | 100 |
 | validation_steps | 100 |
 | workers | 8 |
-| final_score | **40%** |
+| final_score | **41%** |
 <p align="center"> <img src="./docs/misc/train_curve_5.png"> </p>
 
 ## Paramter Set 6:
 | **Parameter** | **Value** |
 |:--|:--:|
-| learning_rate | 0.001 |
+| learning_rate | 0.003 |
 | batch_size | 20 |
-| num_epochs | 100 |
-| steps_per_epoch | 200 |
-| validation_steps | 200 |
+| num_epochs | 400 |
+| steps_per_epoch | 50 |
+| validation_steps | 50 |
 | workers | 8 |
-| final_score | **40%** |
+| final_score | **39%** |
 <p align="center"> <img src="./docs/misc/train_curve_6.png"> </p>
 
 # Trained TensorFlow model
