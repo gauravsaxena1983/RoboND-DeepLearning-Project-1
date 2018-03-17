@@ -32,7 +32,8 @@ Also to speed-up the training I used the following **AWS** instance:
 * p2.xlarge instance
 * AMI: Udacity Robotics Deep Learning Laboratory 
 * 4 x Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
-* NVIDIA GPU GK210GL [Tesla K80]
+* NVIDIA GPU Tesla K80 (1xGK210GL with 12GB Memory & 2496 CUDA cores)
+* 61GB Memory
 
 The following frameworks and packages were installed on both Laptop & AWS instance:
 
@@ -260,17 +261,49 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     <tr><td align="left">train_loss</td>      <td align="center">0.0112</td></tr>
     <tr><td align="left">val_loss</td>        <td align="center">0.0266</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">0.4169500244</td></tr>
+    <tr>
+    <td align="center" colspan="2"><a href="./data/weights/config_model_weights_01">Model Configuration</a></td>
+    <td align="center"><a href="./data/weights/model_weights_01">Model Weights</a></td>
+    </tr>
 </tbody></table>
 
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 2</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
+    <img src="./docs/misc/train_curve_2.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.001</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">207</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">60</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">train_loss</td>      <td align="center">0.0107</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0276</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">0.41550460314</td></tr>
+    <tr>
+    <td align="center" colspan="2"><a href="./data/weights/config_model_weights_02">Model Configuration</a></td>
+    <td align="center"><a href="./data/weights/model_weights_02">Model Weights</a></td>
+    </tr>
+</tbody></table>
 
-# Trained TensorFlow model
-
-The files storing the final configuration of the model and the final weights are on the following links:
-
-[Model Configuration](./data/weights/config_model_weights)
-
-[Model Weights](./data/weights/model_weights)
-
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 3</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
+    <img src="./docs/misc/train_curve_3.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.001</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">207</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">60</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">train_loss</td>      <td align="center"></td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center"></td></tr>
+    <tr><td align="left">final_score</td>     <td align="center"></td></tr>
+    <tr>
+    <td align="center" colspan="2"><a href="./data/weights/config_model_weights_03">Model Configuration</a></td>
+    <td align="center"><a href="./data/weights/model_weights_03">Model Weights</a></td>
+    </tr>
+</tbody></table>
 
 # Prediction
 
