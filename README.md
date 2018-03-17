@@ -258,24 +258,35 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 The files storing the final configuration of the model and the final weights are on the following links:
 
 [Model Configuration](./data/weights/config_model_weights)
+
 [Model Weights](./data/weights/model_weights)
+
 
 # Prediction
 
-### Images while following the target
+To evaluate how well the FCN model is doing under different conditions. We will be using three different predictions available from the helper code provided and data provided (as mentioned above in data gathering section):
+
+**patrol_with_targ:** Test how well the network can detect the hero from a distance.
+
+Images while following the target
 <p align="center"> <img src="./docs/misc/img_1.png"> </p>
 <p align="center"> <img src="./docs/misc/img_2.png"> </p>
 <p align="center"> <img src="./docs/misc/img_3.png"> </p>
 
-### Images while at patrol without target
+**patrol_non_targ:** Test how often the network makes a mistake and identifies the wrong person as the target.
+
+Images while at patrol without target
 <p align="center"> <img src="./docs/misc/img_4.png"> </p>
 <p align="center"> <img src="./docs/misc/img_5.png"> </p>
 <p align="center"> <img src="./docs/misc/img_6.png"> </p>
 
-### Images while at patrol with target
+**following_images:** Test how well the network can identify the target while following them.
+
+Images while at patrol with target
 <p align="center"> <img src="./docs/misc/img_7.png"> </p>
 <p align="center"> <img src="./docs/misc/img_8.png"> </p>
 <p align="center"> <img src="./docs/misc/img_9.png"> </p>
+
 
 # Evaluation
 
