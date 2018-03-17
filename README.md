@@ -241,58 +241,13 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     <img src="./docs/misc/train_curve_1.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.01</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
-    <tr><td align="left">num_epochs</td>      <td align="center">40</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
-    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
-    <tr><td align="left">final_score</td>     <td align="center">42%</td></tr>
-</tbody></table>
-
-<table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 2</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
-    <img src="./docs/misc/train_curve_2.png"></td></tr>
-    <tr><td align="left">learning_rate</td>   <td align="center">0.001</td></tr>
-    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
     <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">200</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">200</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">207</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">60</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
+    <tr><td align="left">train_loss</td>      <td align="center">0.0181</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0321</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">40%</td></tr>
-</tbody></table>
-
-<table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 3</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
-    <img src="./docs/misc/train_curve_3.png"></td></tr>
-    <tr><td align="left">learning_rate</td>   <td align="center">0.005</td></tr>
-    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
-    <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">100</td></tr>
-    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
-    <tr><td align="left">final_score</td>     <td align="center">41%</td></tr>
-</tbody></table>
-
-<table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 4</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
-    <img src="./docs/misc/train_curve_4.png"></td></tr>
-    <tr><td align="left">learning_rate</td>   <td align="center">0.003</td></tr>
-    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
-    <tr><td align="left">num_epochs</td>      <td align="center">400</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">50</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
-    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
-    <tr><td align="left">final_score</td>     <td align="center">39%</td></tr>
 </tbody></table>
 
 
