@@ -32,7 +32,8 @@ Also to speed-up the training I used the following **AWS** instance:
 * p2.xlarge instance
 * AMI: Udacity Robotics Deep Learning Laboratory 
 * 4 x Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
-* NVIDIA GPU GK210GL [Tesla K80]
+* NVIDIA GPU Tesla K80 (1xGK210GL with 12GB Memory & 2496 CUDA cores)
+* 61GB Memory
 
 The following frameworks and packages were installed on both Laptop & AWS instance:
 
@@ -260,7 +261,10 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     <tr><td align="left">train_loss</td>      <td align="center">0.0112</td></tr>
     <tr><td align="left">val_loss</td>        <td align="center">0.0266</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">0.4169500244</td></tr>
+     <tr><td align="left">Model Configuration</td><td align="center">./data/weights/config_model_weights_01</td></tr>
+      <tr><td align="left">Model Weights</td><td align="center">./data/weights/model_weights_01</td></tr>
 </tbody></table>
+
 
 
 # Trained TensorFlow model
