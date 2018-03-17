@@ -322,7 +322,9 @@ The IoU for the dataset that never includes the hero is excluded from grading: *
 
 The Final Grade Score is the pixel wise:
 
-**average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative))**
+```
+average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative))
+```
 
 So the score is: **0.404589892156**
 
