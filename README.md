@@ -13,7 +13,7 @@ In this project we will train a deep neural network to identify and track a targ
 
 # Software & Hardware used for training:
 
-In order to get the best learning from the lab I have decided to use my own GPU enabled hardware to do the learning instead of using AWS Udacity ready made image.
+In order to get the best learning from the lab I have decided to use both my own GPU enabled laptop hardware and AWS instance to do the learning.
 
 I have used the following **laptop** hardware:
 
@@ -49,7 +49,7 @@ The following frameworks and packages were installed on both Laptop & AWS instan
 * transforms3d
 * PyQt4/Pyqt5
 
-It took me very long time to figure out the right version of CUDA/cuDNN that will match the selected version of TensorFlow-GPU then later I found this link which clearly states the required CUDA/cuDNN versions:
+For the Laptop installation, It took me very long time to figure out the right version of CUDA/cuDNN that will match the selected version of TensorFlow-GPU then later I found this link which clearly states the required CUDA/cuDNN versions:
 
 https://www.tensorflow.org/install/install_sources
 
