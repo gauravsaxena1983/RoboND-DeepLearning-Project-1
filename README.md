@@ -234,10 +234,6 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 <p align="center"> <img src="./docs/misc/train_curve_5.png"> </p>
 
 ## Paramter Set 6:
-
-<table>
-  <tbody>
-    <tr>
 | **Parameter** | **Value** |
 |:--|:--:|
 | learning_rate | 0.003 |
@@ -248,41 +244,18 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 | workers | 8 |
 | final_score | **39%** |
 <p align="center"> <img src="./docs/misc/train_curve_6.png"> </p>
-    </tr>
-  </tbody>
-</table>
+
 
 <table>
   <tbody>
     <tr>
-      <th>Tables</th>
-      <th align="center">Are</th>
-      <th align="right">Cool</th>
+      <th align="center">Parameter</th>
+      <th align="center">Value</th>
+      <th align="center">Value</th>
     </tr>
     <tr>
-      <td>col 3 is</td>
-      <td align="center">right-aligned</td>
-      <td align="right">$1600</td>
-    </tr>
-    <tr>
-      <td>col 2 is</td>
-      <td align="center">centered</td>
-      <td align="right">$12</td>
-    </tr>
-    <tr>
-      <td>zebra stripes</td>
-      <td align="center">are neat</td>
-      <td align="right">$1</td>
-    </tr>
-    <tr>
-      <td>
-        <ul>
-          <li>item1</li>
-          <li>item2</li>
-        </ul>
-      </td>
-      <td align="center">See the list</td>
-      <td align="right">from the first column</td>
+      <td align="right">learning_rate</td>
+      <td align="right">0.003</td>
     </tr>
   </tbody>
 </table>
