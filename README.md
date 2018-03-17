@@ -68,9 +68,12 @@ I did not record any data from simulator, I was able to do all required steps us
 
 <table><tbody>
     <tr><th align="center" colspan="3"> Data Set 1</td></tr>
-    <tr><th align="center">Folder</th><td align="center">Content</td></tr>
+    <tr><th align="center">Folder</th><th align="center">Content</th></tr>
     <tr><td align="left">/data/train</td><td align="center">4,131 images + 4,131 masks</td></tr>
-    <tr><td align="left">/data/validation</td><td align="center">1,184 images + 1184 masks</td></tr>
+    <tr><td align="left">/data/validation</td><td align="center">1,184 images + 1,184 masks</td></tr>
+    <tr><td align="left"></td><td align="center"></td></tr>
+    <tr><td align="left"></td><td align="center"></td></tr>
+    <tr><td align="left"></td><td align="center"></td></tr>
 </tbody></table>
 
 
