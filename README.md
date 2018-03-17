@@ -169,35 +169,39 @@ def fcn_model(inputs, num_classes):
 
 # Neural Network Hyper Parameters
 
-* **batch_size:** number of training samples/images that get propagated through the network in a single pass. When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the GPU using this batch size:
+## Batch Size:
+
+number of training samples/images that get propagated through the network in a single pass. When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the GPU using this batch size:
 <p align="center"> <img src="./docs/misc/nvidia-smi.png"> </p>
 
-* **workers:** maximum number of processes to spin up. I used **8 workers** to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs when no work is done and when training:
+## Workers:
+
+maximum number of processes to spin up. I used **8 workers** to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs when no work is done and when training:
 
 <p align="center"> <img src="./docs/misc/cpu_0_workers.png"> </p>
 <p align="center"> <img src="./docs/misc/cpu_8_workers.png"> </p>
 
-* **steps_per_epoch:** number of batches of training images that go through the network in 1 epoch. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size. 
+## Steps Per Epoch:
+
+number of batches of training images that go through the network in 1 epoch. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size. 
 
 When Using data set 1: steps_per_epoch=4131/20=206.55 **aprox. 207**
 
-* **validation_steps:** number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset.
+## Validation Steps:
+
+number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset.
 
 When Using data set 1: validation_steps=1184/20=59.2 **aprox. 60**
 
+## Learning Rate:
 
-My plan to figureout the remaining two parameters"
+parameter that controls the size of weight and bias changes in learning of the training algorithm.
 
-* **learning_rate:** parameter that controls the size of weight and bias changes in learning of the training algorithm.
-* **num_epochs:** number of times the entire training dataset gets propagated through the network.
+## Number of Epochs:
 
-was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good number of brute force runs as needed. Below are the captures of each attempt along with the related training curve:
+number of times the entire training dataset gets propagated through the network.
 
-
-
-
-
-
+My plan to figureout the learning rate and number of epochs is on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good number of brute force runs as needed. Below are the captures of each attempt along with the related training curve:
 
 <table><tbody>
     <tr><th align="center" colspan="3">Parameters Set 1</td></tr>
@@ -209,6 +213,8 @@ was mostly based on brute force; having my own GPU enabled tensorflow machine he
     <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
     <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">42%</td></tr>
 </tbody></table>
 
@@ -222,6 +228,8 @@ was mostly based on brute force; having my own GPU enabled tensorflow machine he
     <tr><td align="left">steps_per_epoch</td> <td align="center">200</td></tr>
     <tr><td align="left">validation_steps</td><td align="center">200</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">40%</td></tr>
 </tbody></table>
 
@@ -235,6 +243,8 @@ was mostly based on brute force; having my own GPU enabled tensorflow machine he
     <tr><td align="left">steps_per_epoch</td> <td align="center">100</td></tr>
     <tr><td align="left">validation_steps</td><td align="center">100</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">41%</td></tr>
 </tbody></table>
 
@@ -248,6 +258,8 @@ was mostly based on brute force; having my own GPU enabled tensorflow machine he
     <tr><td align="left">steps_per_epoch</td> <td align="center">50</td></tr>
     <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">39%</td></tr>
 </tbody></table>
 
@@ -261,6 +273,8 @@ was mostly based on brute force; having my own GPU enabled tensorflow machine he
     <tr><td align="left">steps_per_epoch</td> <td align="center">207</td></tr>
     <tr><td align="left">validation_steps</td><td align="center">60</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">%</td></tr>
 </tbody></table>
 
