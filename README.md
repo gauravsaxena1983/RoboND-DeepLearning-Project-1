@@ -214,7 +214,7 @@ Outputs shape: (?, 160, 160, 3) 	Output Size in Pixel
 number of training samples/images that get propagated through the network in a single pass. On my Laptop, when I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the Laptop GPU using this batch size:
 <p align="center"> <img src="./docs/misc/nvidia-smi_lt.png"> </p>
 
-On AWS, I was able to use bigger batches:
+On AWS, I was able to use bigger batches (100):
 
 Below screen shot showing the utilization details of the AWS GPU using this batch size:
 <p align="center"> <img src="./docs/misc/nvidia-smi_aws.png"> </p>
@@ -230,13 +230,15 @@ maximum number of processes to spin up. I used **8 workers** to fully utilize th
 
 number of batches of training images that go through the network in 1 epoch. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size. 
 
-When Using data set 1: steps_per_epoch=4131/20=206.55 **aprox. 207**
+When Using data set 1 and laptop: steps_per_epoch=4131/20=206.55 **aprox. 207**
+When Using data set 1 and AWS batch=100: steps_per_epoch=4131/100=41.31 **aprox. 41**
 
 ## Validation Steps:
 
 number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset.
 
-When Using data set 1: validation_steps=1184/20=59.2 **aprox. 60**
+When Using data set 1 and laptop: validation_steps=1184/20=59.2 **aprox. 60**
+When Using data set 1 and AWS batch=100: validation_steps=1184/100=11.84 **aprox. 12**
 
 ## Learning Rate:
 
