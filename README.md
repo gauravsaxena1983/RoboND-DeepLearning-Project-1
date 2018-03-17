@@ -254,28 +254,33 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
       <th align="center">Training Curve</th>
     </tr>
     <tr>
-      <td align="right">learning_rate</td>
-      <td align="right">0.003</td>
+      <td align="left">learning_rate</td>
+      <td align="center">0.003</td>
+      <td align="center"> <img src="./docs/misc/train_curve_6.png"></td>
     </tr>
     <tr>
-      <td align="right">batch_size</td>
-      <td align="right">20</td>
+      <td align="left">batch_size</td>
+      <td align="center">20</td>
     </tr>
     <tr>
-      <td align="right">num_epochs</td>
-      <td align="right">400</td>
+      <td align="left">num_epochs</td>
+      <td align="center">400</td>
     </tr>
     <tr>
-      <td align="right">steps_per_epoch</td>
-      <td align="right">50</td>
+      <td align="left">steps_per_epoch</td>
+      <td align="center">50</td>
     </tr>
     <tr>
-      <td align="right">validation_steps</td>
-      <td align="right">50</td>
+      <td align="left">validation_steps</td>
+      <td align="center">50</td>
     </tr>
     <tr>
-      <td align="right">workers</td>
-      <td align="right">8</td>
+      <td align="left">workers</td>
+      <td align="center">8</td>
+    </tr>
+    <tr>
+      <td align="left">final_score</td>
+      <td align="center">39%</td>
     </tr>
   </tbody>
 </table>
