@@ -66,7 +66,7 @@ https://www.tensorflow.org/install/install_sources
 
 I did not record any data from simulator, I was able to do all required steps using the provided Training, Validation, and Sample Evaluation Data.
 
-<table><tbody>
+<table align="center"><tbody>
     <tr><th align="center" colspan="3"> Data Set 1</td></tr>
     <tr><th align="center">Folder</th><th align="center">Content</th></tr>
     <tr><td align="left">/data/train</td><td align="left">4,131 images + 4,131 masks</td></tr>
@@ -188,7 +188,7 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 
 
 
-<table align="center"><tbody>
+<table><tbody>
     <tr><th align="center" colspan="3">Parameters Set 1</td></tr>
     <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
     <img src="./docs/misc/train_curve_1.png"></td></tr>
