@@ -68,7 +68,7 @@ I did not record any data from simulator, I was able to do all required steps us
 
 ## Separable Convolutions Layer
 
-Separable convolution layers will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function.
+Separable convolution layers with same padding will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function.
 
 ```python
 def separable_conv2d_batchnorm(input_layer, filters, strides=1):
@@ -81,7 +81,7 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
 
 ## Regular Convolution Layer
 
-Regular convolution will be used in 1x1 convlution layer and it includes batch normalization with the ReLU activation function also.
+Regular convolution with same padding will be used in 1x1 convlution layer and it includes batch normalization with the ReLU activation function also.
 
 ```python
 def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
@@ -103,6 +103,8 @@ def bilinear_upsample(input_layer):
 ```
 ## Encoder Block
 
+Each encoder block is consisiting of one separable convolution layer that is having batch normalization and ReLU activation function.
+
 ```python
 def encoder_block(input_layer, filters, strides):
     
@@ -113,6 +115,8 @@ def encoder_block(input_layer, filters, strides):
 ```
 
 ## Decoder Block
+
+Each decoder block is consisting of Upsampler to collect input from a previous layer with smaller size, a concatenate function to add upsampled layer to the input of decoder then pass the resulting output to two layers of separable conv+batch normalization+ReLU activation function.
 
 ```python
 def decoder_block(small_ip_layer, large_ip_layer, filters):
@@ -130,7 +134,14 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
     return output_layer
 ```
 
-## FCN Model
+## FCN Model:
+
+The FCN model will have"
+
+* 3 Encoder Blocks
+* 1 1x1 Regular Conv Block
+* 3 Decoder Blocks
+* 1 Softmax activation using same padding
 
 ```python
 def fcn_model(inputs, num_classes):
@@ -169,6 +180,20 @@ def fcn_model(inputs, num_classes):
     print("Outputs shape:",outputs.shape, "\tOutput Size in Pixel")
     
     return outputs
+```
+
+Output of the shape print functions is as following:
+
+```
+Inputs  shape: (?, 160, 160, 3)   	Image Size in Pixels
+layer01 shape: (?, 80, 80, 32)   	Encoder Block 1
+layer02 shape: (?, 40, 40, 64)   	Encoder Block 2
+layer03 shape: (?, 20, 20, 128) 	Encoder Block 3
+layer04 shape: (?, 20, 20, 256) 	1x1 Conv Layer
+layer05 shape: (?, 40, 40, 128) 	Decoder Block 1
+layer06 shape: (?, 80, 80, 64)   	Decoder Block 2
+layer07 shape: (?, 160, 160, 32) 	Decoder Block 3
+Outputs shape: (?, 160, 160, 3) 	Output Size in Pixel
 ```
 
 
