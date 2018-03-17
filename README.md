@@ -68,6 +68,7 @@ I did not record any data from simulator, I was able to do all required steps us
 
 ## Separable Convolutions Layer
 
+Separable convolution layers will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function.
 
 ```python
 def separable_conv2d_batchnorm(input_layer, filters, strides=1):
@@ -80,6 +81,8 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
 
 ## Regular Convolution Layer
 
+Regular convolution will be used in 1x1 convlution layer and it includes batch normalization with the ReLU activation function also.
+
 ```python
 def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
     output_layer = layers.Conv2D(filters=filters, kernel_size=kernel_size, strides=strides, 
@@ -90,6 +93,8 @@ def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
 ```
 
 ## Bilinear Upsampling Layer
+
+Upsampling is used in the decoder block of the FCN, Upsampling by a factor of 2 is generally used, however we can try out different factors as well.
 
 ```python
 def bilinear_upsample(input_layer):
@@ -195,17 +200,17 @@ When Using data set 1: validation_steps=1184/20=59.2 **aprox. 60**
 
 ## Learning Rate:
 
-parameter that controls the size of weight and bias changes in learning of the training algorithm.
+parameter that controls the size of weight and bias changes in learning of the training algorithm. I will try values such as 0.01, 0.001, 0.005 then using brute force will try to find the best fit.
 
 ## Number of Epochs:
 
-number of times the entire training dataset gets propagated through the network.
+number of times the entire training dataset gets propagated through the network. I will try values ranging from 50 - 400 and based on loss/val_loss decrement rate I will decide which value is fit.
 
-My plan to figureout the learning rate and number of epochs is on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good number of brute force runs as needed. Below are the captures of each attempt along with the related training curve:
+Having my own tensorflow GPU enabled machine helped me alot in doing a good number of training runs to compare results of different paramters. Below are the captures of selected attempts along with the related training curve:
 
 <table><tbody>
     <tr><th align="center" colspan="3">Parameters Set 1</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
     <img src="./docs/misc/train_curve_1.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.01</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
@@ -220,7 +225,7 @@ My plan to figureout the learning rate and number of epochs is on brute force; h
 
 <table><tbody>
     <tr><th align="center" colspan="3">Parameters Set 2</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
     <img src="./docs/misc/train_curve_2.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.001</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
@@ -235,7 +240,7 @@ My plan to figureout the learning rate and number of epochs is on brute force; h
 
 <table><tbody>
     <tr><th align="center" colspan="3">Parameters Set 3</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
     <img src="./docs/misc/train_curve_3.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.005</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
@@ -250,7 +255,7 @@ My plan to figureout the learning rate and number of epochs is on brute force; h
 
 <table><tbody>
     <tr><th align="center" colspan="3">Parameters Set 4</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
     <img src="./docs/misc/train_curve_4.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.003</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
@@ -263,20 +268,6 @@ My plan to figureout the learning rate and number of epochs is on brute force; h
     <tr><td align="left">final_score</td>     <td align="center">39%</td></tr>
 </tbody></table>
 
-<table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 5</td></tr>
-    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
-    <img src="./docs/misc/train_curve_5.png"></td></tr>
-    <tr><td align="left">learning_rate</td>   <td align="center">0.003</td></tr>
-    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
-    <tr><td align="left">num_epochs</td>      <td align="center">250</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">207</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">60</td></tr>
-    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">loss</td>            <td align="center">0.07</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0333</td></tr>
-    <tr><td align="left">final_score</td>     <td align="center">%</td></tr>
-</tbody></table>
 
 # Trained TensorFlow model
 
