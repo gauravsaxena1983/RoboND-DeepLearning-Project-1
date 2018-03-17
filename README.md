@@ -234,6 +234,10 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 <p align="center"> <img src="./docs/misc/train_curve_5.png"> </p>
 
 ## Paramter Set 6:
+
+<table>
+  <tbody>
+    <tr>
 | **Parameter** | **Value** |
 |:--|:--:|
 | learning_rate | 0.003 |
@@ -244,7 +248,9 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 | workers | 8 |
 | final_score | **39%** |
 <p align="center"> <img src="./docs/misc/train_curve_6.png"> </p>
-
+    </tr>
+  </tbody>
+</table>
 
 <table>
   <tbody>
