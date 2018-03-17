@@ -297,11 +297,11 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
     <img src="./docs/misc/train_curve_3.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.0001</td></tr>
-    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">100</td></tr>
     <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
-    <tr><td align="left">steps_per_epoch</td> <td align="center">207</td></tr>
-    <tr><td align="left">validation_steps</td><td align="center">60</td></tr>
-    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">41</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">12</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">4</td></tr>
     <tr><td align="left">train_loss</td>      <td align="center">0.0295</td></tr>
     <tr><td align="left">val_loss</td>        <td align="center">0.0392</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">0.321985999002</td></tr>
