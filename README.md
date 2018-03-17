@@ -251,12 +251,11 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
     <tr>
       <th align="center">Parameter</th>
       <th align="center">Value</th>
-      <th align="center">Training Curve</th>
+      <td align="center" rowspan="8"> <img src="./docs/misc/train_curve_6.png"></td>
     </tr>
     <tr>
       <td align="left">learning_rate</td>
       <td align="center">0.003</td>
-      <td align="center" rowspan="7"> <img src="./docs/misc/train_curve_6.png"></td>
     </tr>
     <tr>
       <td align="left">batch_size</td>
