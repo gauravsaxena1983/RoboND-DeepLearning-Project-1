@@ -172,20 +172,29 @@ def fcn_model(inputs, num_classes):
 * **batch_size:** number of training samples/images that get propagated through the network in a single pass. When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the GPU using this batch size:
 <p align="center"> <img src="./docs/misc/nvidia-smi.png"> </p>
 
-* **workers:** maximum number of processes to spin up. I used 8 workers to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs when no work is done and when training:
+* **workers:** maximum number of processes to spin up. I used **8 workers** to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs when no work is done and when training:
 
 <p align="center"> <img src="./docs/misc/cpu_0_workers.png"> </p>
 <p align="center"> <img src="./docs/misc/cpu_8_workers.png"> </p>
 
-My plan to figureout the rest of parameters was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good number of brute force runs as needed. Below are the captures of each attempt along with the related training curve:
+* **steps_per_epoch:** number of batches of training images that go through the network in 1 epoch. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size. 
 
-* **learning_rate:** 
-
-* **num_epochs:** number of times the entire training dataset gets propagated through the network.
-
-* **steps_per_epoch:** number of batches of training images that go through the network in 1 epoch. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size.
+When Using data set 1: steps_per_epoch=4131/20=206.55 **aprox. 207**
 
 * **validation_steps:** number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset.
+
+When Using data set 1: validation_steps=1184/20=59.2 **aprox. 60**
+
+
+My plan to figureout the remaining two parameters"
+
+* **learning_rate:** parameter that controls the size of weight and bias changes in learning of the training algorithm.
+* **num_epochs:** number of times the entire training dataset gets propagated through the network.
+
+was mostly based on brute force; having my own GPU enabled tensorflow machine helped me alot in doing a good number of brute force runs as needed. Below are the captures of each attempt along with the related training curve:
+
+
+
 
 
 
