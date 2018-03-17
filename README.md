@@ -221,10 +221,12 @@ Below screen shot showing the utilization details of the AWS GPU using this batc
 
 ## Workers:
 
-maximum number of processes to spin up. I used **8 workers** to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs when no work is done and when training:
+maximum number of processes to spin up. In case of laptop I used **8 workers** to fully utilize the power of my Intel i7 processor cores. Below are the actual utilization graphs when no work is done and when training:
 
 <p align="center"> <img src="./docs/misc/cpu_0_workers.png"> </p>
 <p align="center"> <img src="./docs/misc/cpu_8_workers.png"> </p>
+
+in case of AWS, I used **4 workers** to utilize the 4 CPUs.
 
 ## Steps Per Epoch:
 
