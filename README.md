@@ -261,8 +261,10 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     <tr><td align="left">train_loss</td>      <td align="center">0.0112</td></tr>
     <tr><td align="left">val_loss</td>        <td align="center">0.0266</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">0.4169500244</td></tr>
-    <tr><td align="center" colspan="2"><a href="./data/weights/config_model_weights_01">Model Configuration</a></td>
-    <tr><td align="center"><a href="./data/weights/model_weights_01">Model Weights</a></td></tr>
+    <tr>
+    <td align="center" colspan="2"><a href="./data/weights/config_model_weights_01">Model Configuration</a></td>
+    <td align="center"><a href="./data/weights/model_weights_01">Model Weights</a></td>
+    </tr>
 </tbody></table>
 
 
