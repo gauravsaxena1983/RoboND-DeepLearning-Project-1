@@ -266,32 +266,16 @@ The files storing the final configuration of the model and the final weights are
 
 To evaluate how well the FCN model is doing under different conditions. We will be using three different predictions available from the helper code provided and data provided (as mentioned above in data gathering section):
 
-**patrol_with_targ:** Test how well the network can detect the hero from a distance.
+### following_images:
+Test how well the network can identify the target while following them.
 
-Images while following the target
+Images while following the target:
+
 <p align="center"> <img src="./docs/misc/img_1.png"> </p>
 <p align="center"> <img src="./docs/misc/img_2.png"> </p>
 <p align="center"> <img src="./docs/misc/img_3.png"> </p>
 
-**patrol_non_targ:** Test how often the network makes a mistake and identifies the wrong person as the target.
-
-Images while at patrol without target
-<p align="center"> <img src="./docs/misc/img_4.png"> </p>
-<p align="center"> <img src="./docs/misc/img_5.png"> </p>
-<p align="center"> <img src="./docs/misc/img_6.png"> </p>
-
-**following_images:** Test how well the network can identify the target while following them.
-
-Images while at patrol with target
-<p align="center"> <img src="./docs/misc/img_7.png"> </p>
-<p align="center"> <img src="./docs/misc/img_8.png"> </p>
-<p align="center"> <img src="./docs/misc/img_9.png"> </p>
-
-
-# Evaluation
-
 ### Scores for while the quad is following behind the target. 
-
 ```
 number of validation samples intersection over the union evaulated on 542
 average intersection over union for background is 0.9946233635164803
@@ -300,8 +284,16 @@ average intersection over union for the hero is 0.9043385744932508
 number true positives: 539, number false positives: 0, number false negatives: 0
 ```
 
-### Scores for images while the quad is on patrol and the target is not visable
+### patrol_non_targ:
+Test how often the network makes a mistake and identifies the wrong person as the target.
 
+Images while at patrol without target:
+
+<p align="center"> <img src="./docs/misc/img_4.png"> </p>
+<p align="center"> <img src="./docs/misc/img_5.png"> </p>
+<p align="center"> <img src="./docs/misc/img_6.png"> </p>
+
+### Scores for images while the quad is on patrol and the target is not visable
 ```
 number of validation samples intersection over the union evaulated on 270
 average intersection over union for background is 0.9852442884819069
@@ -310,8 +302,16 @@ average intersection over union for the hero is 0.0
 number true positives: 0, number false positives: 145, number false negatives: 0
 ```
 
-# This score measures how well the neural network can detect the target from far away
+### patrol_with_targ: 
+Test how well the network can detect the hero from a distance.
 
+Images while at patrol with target:
+
+<p align="center"> <img src="./docs/misc/img_7.png"> </p>
+<p align="center"> <img src="./docs/misc/img_8.png"> </p>
+<p align="center"> <img src="./docs/misc/img_9.png"> </p>
+
+# This score measures how well the neural network can detect the target from far away
 ```
 number of validation samples intersection over the union evaulated on 322
 average intersection over union for background is 0.9960849086994017
@@ -320,27 +320,16 @@ average intersection over union for the hero is 0.25951798030115997
 number true positives: 150, number false positives: 6, number false negatives: 151
 ```
 
-### Sum all the true positives, etc from the three datasets to get a weight for the score
+# Evaluation
 
-```
-0.6952573158425832
-```
+Sum all the true positives, etc from the three datasets to get a weight for the score: **0.6952573158425832**
+The IoU for the dataset that never includes the hero is excluded from grading: **0.581928277397**
 
-### The IoU for the dataset that never includes the hero is excluded from grading
-
-```
-0.581928277397
-```
-
-### The Final Grade Score:
-
-The final score is the pixel wise:
+The Final Grade Score is the pixel wise:
 
 **average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative))**
 
-```
-0.404589892156
-```
+So the score is: **0.404589892156**
 
 # Future Enhancements
 
