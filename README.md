@@ -174,9 +174,9 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 
 
 <table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 3</td></tr>
+    <tr><th align="center" colspan="3">Parameters Set 1</td></tr>
     <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
-    <img src="./docs/misc/train_curve_3.png"></td></tr>
+    <img src="./docs/misc/train_curve_1.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.01</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
     <tr><td align="left">num_epochs</td>      <td align="center">40</td></tr>
@@ -187,9 +187,9 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 </tbody></table>
 
 <table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 4</td></tr>
+    <tr><th align="center" colspan="3">Parameters Set 2</td></tr>
     <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
-    <img src="./docs/misc/train_curve_4.png"></td></tr>
+    <img src="./docs/misc/train_curve_2.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.001</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
     <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
@@ -200,9 +200,9 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 </tbody></table>
 
 <table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 5</td></tr>
+    <tr><th align="center" colspan="3">Parameters Set 3</td></tr>
     <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
-    <img src="./docs/misc/train_curve_5.png"></td></tr>
+    <img src="./docs/misc/train_curve_3.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.005</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
     <tr><td align="left">num_epochs</td>      <td align="center">100</td></tr>
@@ -213,9 +213,9 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 </tbody></table>
 
 <table><tbody>
-    <tr><th align="center" colspan="3">Parameters Set 6</td></tr>
+    <tr><th align="center" colspan="3">Parameters Set 4</td></tr>
     <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
-    <img src="./docs/misc/train_curve_6.png"></td></tr>
+    <img src="./docs/misc/train_curve_4.png"></td></tr>
     <tr><td align="left">learning_rate</td>   <td align="center">0.003</td></tr>
     <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
     <tr><td align="left">num_epochs</td>      <td align="center">400</td></tr>
