@@ -203,8 +203,13 @@ Outputs shape: (?, 160, 160, 3) 	Output Size in Pixel
 
 ## Batch Size:
 
-number of training samples/images that get propagated through the network in a single pass. When I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the GPU using this batch size:
-<p align="center"> <img src="./docs/misc/nvidia-smi.png"> </p>
+number of training samples/images that get propagated through the network in a single pass. On my Laptop, when I used batch size of 64, 50, 40 and 32 I was getting "**ResourceExhaustedError : OOM when allocating tensor with shape..**" error. I was able to resolve it after reducing the batch size down to **20**. Below screen shot showing the utilization details of the Laptop GPU using this batch size:
+<p align="center"> <img src="./docs/misc/nvidia-smi_lt.png"> </p>
+
+On AWS, I was able to use bigger batches:
+
+Below screen shot showing the utilization details of the AWS GPU using this batch size:
+<p align="center"> <img src="./docs/misc/nvidia-smi_aws.png"> </p>
 
 ## Workers:
 
