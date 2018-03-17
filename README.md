@@ -233,59 +233,18 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 | final_score | **41%** |
 <p align="center"> <img src="./docs/misc/train_curve_5.png"> </p>
 
-## Paramter Set 6:
-| **Parameter** | **Value** |
-|:--|:--:|
-| learning_rate | 0.003 |
-| batch_size | 20 |
-| num_epochs | 400 |
-| steps_per_epoch | 50 |
-| validation_steps | 50 |
-| workers | 8 |
-| final_score | **39%** |
-<p align="center"> <img src="./docs/misc/train_curve_6.png"> </p>
-
-
-<table>
-  <tbody>
-    <tr>
-      <th align="center" colspan="3">Parameters Set 6</td>
-    </tr>  
-    <tr>
-      <th align="center">Parameter</th>
-      <th align="center">Value</th>
-      <td align="center" rowspan="8"> <img src="./docs/misc/train_curve_6.png"></td>
-    </tr>
-    <tr>
-      <td align="left">learning_rate</td>
-      <td align="center">0.003</td>
-    </tr>
-    <tr>
-      <td align="left">batch_size</td>
-      <td align="center">20</td>
-    </tr>
-    <tr>
-      <td align="left">num_epochs</td>
-      <td align="center">400</td>
-    </tr>
-    <tr>
-      <td align="left">steps_per_epoch</td>
-      <td align="center">50</td>
-    </tr>
-    <tr>
-      <td align="left">validation_steps</td>
-      <td align="center">50</td>
-    </tr>
-    <tr>
-      <td align="left">workers</td>
-      <td align="center">8</td>
-    </tr>
-    <tr>
-      <td align="left">final_score</td>
-      <td align="center">39%</td>
-    </tr>
-  </tbody>
-</table>
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 6</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <img src="./docs/misc/train_curve_6.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.003</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">400</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">50</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">39%</td></tr>
+  </tbody></table>
 
 # Trained TensorFlow model
 
