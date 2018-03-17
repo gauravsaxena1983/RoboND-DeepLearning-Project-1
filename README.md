@@ -251,7 +251,7 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
     <tr>
       <th align="center">Parameter</th>
       <th align="center">Value</th>
-      <td align="center" rowspan="8"> <img src="./docs/misc/train_curve_6.png"></td>
+      <th align="center" rowspan="8"> <img src="./docs/misc/train_curve_6.png"></th>
     </tr>
     <tr>
       <td align="left">learning_rate</td>
