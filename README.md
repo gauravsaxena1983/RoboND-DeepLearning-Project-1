@@ -187,9 +187,8 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 
 
 
-<table><tbody>
-    <tr><td align="center">
-<table><tbody>
+
+<table align="center"><tbody>
     <tr><th align="center" colspan="3">Parameters Set 1</td></tr>
     <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
     <img src="./docs/misc/train_curve_1.png"></td></tr>
@@ -201,8 +200,7 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">42%</td></tr>
 </tbody></table>
-    </td>
-    <td align="center">
+
 <table><tbody>
     <tr><th align="center" colspan="3">Parameters Set 2</td></tr>
     <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
@@ -214,8 +212,6 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
     <tr><td align="left">validation_steps</td><td align="center">200</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">40%</td></tr>
-</tbody></table>
-    </td></tr>
 </tbody></table>
 
 <table><tbody>
