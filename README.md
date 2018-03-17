@@ -323,7 +323,7 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
     <tr><td align="left">train_loss</td>      <td align="center">0.0221</td></tr>
     <tr><td align="left">val_loss</td>        <td align="center">0.0327</td></tr>
-    <tr><td align="left">final_score</td>     <td align="center"></td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">0.333103544024</td></tr>
     <tr>
     <td align="center" colspan="2"><a href="./data/weights/config_model_weights_04">Model Configuration</a></td>
     <td align="center"><a href="./data/weights/model_weights_04">Model Weights</a></td>
