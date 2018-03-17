@@ -249,7 +249,7 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 <table>
   <tbody>
     <tr>
-      <th align="center" rowspan="3">Parameters Set 6</td>
+      <th align="center" colspan="3">Parameters Set 6</td>
     </tr>  
     <tr>
       <th align="center">Parameter</th>
