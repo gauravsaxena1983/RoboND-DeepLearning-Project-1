@@ -71,9 +71,9 @@ I did not record any data from simulator, I was able to do all required steps us
     <tr><th align="center">Folder</th><th align="center">Content</th></tr>
     <tr><td align="left">/data/train</td><td align="center">4,131 images + 4,131 masks</td></tr>
     <tr><td align="left">/data/validation</td><td align="center">1,184 images + 1,184 masks</td></tr>
-    <tr><td align="left"></td><td align="center"></td></tr>
-    <tr><td align="left"></td><td align="center"></td></tr>
-    <tr><td align="left"></td><td align="center"></td></tr>
+    <tr><td align="left">/data/sample_evalution_data/following_images</td><td align="center">542 images + 542 masks</td></tr>
+    <tr><td align="left">/data/sample_evalution_data/patrol_non_targ</td><td align="center"> 270 images + 270 masks</td></tr>
+    <tr><td align="left">/data/sample_evalution_data/patrol_with_targ</td><td align="center"> 322 images + 322 masks</td></tr>
 </tbody></table>
 
 
