@@ -257,9 +257,9 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     <tr><td align="left">steps_per_epoch</td> <td align="center">207</td></tr>
     <tr><td align="left">validation_steps</td><td align="center">60</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
-    <tr><td align="left">train_loss</td>      <td align="center">0.0181</td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center">0.0321</td></tr>
-    <tr><td align="left">final_score</td>     <td align="center">40%</td></tr>
+    <tr><td align="left">train_loss</td>      <td align="center">0.0112</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0266</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">0.4169500244</td></tr>
 </tbody></table>
 
 
