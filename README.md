@@ -66,6 +66,13 @@ https://www.tensorflow.org/install/install_sources
 
 I did not record any data from simulator, I was able to do all required steps using the provided Training, Validation, and Sample Evaluation Data.
 
+<table><tbody>
+    <tr><th align="center" colspan="3"> Data Set 1</td></tr>
+    <tr><th align="center">Folder</th><td align="center">Content</td></tr>
+    <tr><td align="left">/data/train</td><td align="center">4,131 images + 4,131 masks</td></tr>
+    <tr><td align="left">/data/validation</td><td align="center">1,184 images + 1184 masks</td></tr>
+</tbody></table>
+
 
 # Fully Convolutional Network (FCN) Layers
 
@@ -171,6 +178,8 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 * **steps_per_epoch:** number of batches of training images that go through the network in 1 epoch. One recommended value to try would be based on the total number of images in training dataset divided by the batch_size.
 
 * **validation_steps:** number of batches of validation images that go through the network in 1 epoch. This is similar to steps_per_epoch, except validation_steps is for the validation dataset.
+
+
 
 
 <table><tbody>
