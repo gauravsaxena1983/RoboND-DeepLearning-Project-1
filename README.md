@@ -383,6 +383,15 @@ average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative)
 
 So the score is: **0.404589892156**
 
+# Testing Model in the Simulator
+
+I have selected the best model from the above mentioned and copied it to the code folder, started the simulator, then ran the following command to test the model in simulator:
+
+```bash
+$ python3 follower.py --pred_viz model_weights
+```
+
+
 # Future Enhancements
 
 * Recording a bigger dataset capturing more angles/distances of the target will help in further improving the network accuracy.
