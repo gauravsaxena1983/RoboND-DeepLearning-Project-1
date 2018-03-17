@@ -221,6 +221,30 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
 | final_score | **40%** |
 <p align="center"> <img src="./docs/misc/train_curve_4.png"> </p>
 
+## Paramter Set 5:
+| **Parameter** | **Value** |
+|:--|:--:|
+| learning_rate | 0.005 |
+| batch_size | 20 |
+| num_epochs | 100 |
+| steps_per_epoch | 100 |
+| validation_steps | 100 |
+| workers | 8 |
+| final_score | **40%** |
+<p align="center"> <img src="./docs/misc/train_curve_5.png"> </p>
+
+## Paramter Set 6:
+| **Parameter** | **Value** |
+|:--|:--:|
+| learning_rate | 0.001 |
+| batch_size | 20 |
+| num_epochs | 100 |
+| steps_per_epoch | 200 |
+| validation_steps | 200 |
+| workers | 8 |
+| final_score | **40%** |
+<p align="center"> <img src="./docs/misc/train_curve_6.png"> </p>
+
 # Trained TensorFlow model
 
 The file is in the correct format (.h5) and runs without errors.
