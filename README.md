@@ -66,7 +66,7 @@ https://www.tensorflow.org/install/install_sources
 
 I did not record any data from simulator, I was able to do all required steps using the provided Training, Validation, and Sample Evaluation Data.
 
-<table align="center"><tbody>
+<table><tbody>
     <tr><th align="center" colspan="3"> Data Set 1</td></tr>
     <tr><th align="center">Folder</th><th align="center">Content</th></tr>
     <tr><td align="left">/data/train</td><td align="left">4,131 images + 4,131 masks</td></tr>
