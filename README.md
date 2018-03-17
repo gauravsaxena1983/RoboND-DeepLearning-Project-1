@@ -69,11 +69,14 @@ I did not record any data from simulator, I was able to do all required steps us
 <table><tbody>
     <tr><th align="center" colspan="3"> Data Set 1</td></tr>
     <tr><th align="center">Folder</th><th align="center">Content</th></tr>
-    <tr><td align="left">/data/train</td><td align="center">4,131 images + 4,131 masks</td></tr>
-    <tr><td align="left">/data/validation</td><td align="center">1,184 images + 1,184 masks</td></tr>
-    <tr><td align="left">/data/sample_evalution_data/following_images</td><td align="center">542 images + 542 masks</td></tr>
-    <tr><td align="left">/data/sample_evalution_data/patrol_non_targ</td><td align="center"> 270 images + 270 masks</td></tr>
-    <tr><td align="left">/data/sample_evalution_data/patrol_with_targ</td><td align="center"> 322 images + 322 masks</td></tr>
+    <tr><td align="left">/data/train</td><td align="left">4,131 images + 4,131 masks</td></tr>
+    <tr><td align="left">/data/validation</td><td align="left">1,184 images + 1,184 masks</td></tr>    
+    <tr><td align="left">/data/sample_evalution_data/following_images</td>
+       <td align="left">542 images + 542 masks</td></tr><tr>
+    <td align="left">/data/sample_evalution_data/patrol_non_targ</td>
+       <td align="left"> 270 images + 270 masks</td></tr><tr>
+    <td align="left">/data/sample_evalution_data/patrol_with_targ</td>
+       <td align="left"> 322 images + 322 masks</td></tr>
 </tbody></table>
 
 
@@ -235,6 +238,19 @@ My plan to figureout the rest of parameters was mostly based on brute force; hav
     <tr><td align="left">validation_steps</td><td align="center">50</td></tr>
     <tr><td align="left">workers</td>         <td align="center">8</td></tr>
     <tr><td align="left">final_score</td>     <td align="center">39%</td></tr>
+</tbody></table>
+
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 5</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="8">
+    <img src="./docs/misc/train_curve_5.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.003</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">20</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">250</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">207</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">60</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">8</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">%</td></tr>
 </tbody></table>
 
 # Trained TensorFlow model
