@@ -13,16 +13,10 @@ In this project we will train a deep neural network to identify and track a targ
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/1155/view) Points
 
-This means all network architecture should be explained, parameters should be explicitly stated with factual justifications, and plots / graphs are used where possible to further enhance understanding.
-
-The student clearly explains each layer of the network architecture and the role that it plays in the overall network. The student can demonstrate the benefits and/or drawbacks of different network architectures pertaining to this project and can justify the current network with factual data. Any choice of configurable parameters should also be explained in the network architecture.
-
-The student shall also provide a graph, table, diagram, illustration or figure for the overall network to serve as a reference for the reviewer.
+This means all network architecture should be explained The student clearly explains each layer of the network architecture and the role that it plays in the overall network. The student can demonstrate the benefits and/or drawbacks of different network architectures pertaining to this project and can justify the current network with factual data. Any choice of configurable parameters should also be explained in the network architecture.
 
 The student demonstrates a clear understanding of 1 by 1 convolutions and where/when/how it should be used.
 The student demonstrates a clear understanding of a fully connected layer and where/when/how it should be used.
-
-The student is able to identify the use of various reasons for encoding / decoding images, when it should be used, why it is useful, and any problems that may arise.
 
 The student is able to clearly articulate whether this model and data would work well for following another object (dog, cat, car, etc.) instead of a human and if not, what changes would be required.
 
@@ -311,7 +305,7 @@ Images while at patrol with target:
 <p align="center"> <img src="./docs/misc/img_8.png"> </p>
 <p align="center"> <img src="./docs/misc/img_9.png"> </p>
 
-# This score measures how well the neural network can detect the target from far away
+### This score measures how well the neural network can detect the target from far away
 ```
 number of validation samples intersection over the union evaulated on 322
 average intersection over union for background is 0.9960849086994017
@@ -323,6 +317,7 @@ number true positives: 150, number false positives: 6, number false negatives: 1
 # Evaluation
 
 Sum all the true positives, etc from the three datasets to get a weight for the score: **0.6952573158425832**
+
 The IoU for the dataset that never includes the hero is excluded from grading: **0.581928277397**
 
 The Final Grade Score is the pixel wise:
