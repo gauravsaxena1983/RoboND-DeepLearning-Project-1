@@ -417,8 +417,16 @@ $ python3 follower.py --pred_viz model_weights
 ```
 The recording of the test is on the following YouTube link
 
-https://youtu.be/vR2EC16uoZU
 
+[![test video](http://img.youtube.com/vi/vR2EC16uoZU/default.jpg)](http://www.youtube.com/watch?v=vR2EC16uoZU)
+
+# issues
+
+* Installation of Tensorflow GPU along with the right verison of CUDA/cuDNN drivers was a challenge. However I was able to find a good reference on this link 
+
+https://www.tensorflow.org/install/install_sources
+
+* Loading a presaved model did not work as expected, I was able to load the model but the test images are not appearing. I was able to get the test images only when I do a full training cycle.
 
 # Future Enhancements
 
