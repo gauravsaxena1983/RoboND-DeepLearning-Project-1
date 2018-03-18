@@ -205,7 +205,9 @@ layer06 shape: (?, 80, 80, 64)   	Decoder Block 2
 layer07 shape: (?, 160, 160, 32) 	Decoder Block 3
 Outputs shape: (?, 160, 160, 3) 	Output Size in Pixel
 ```
+And the FCN model is as shown below:
 
+<p align="center"> <img src="./docs/misc/fcn_diagram.png"> </p>
 
 # Neural Network Hyper Parameters
 
