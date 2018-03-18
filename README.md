@@ -89,7 +89,7 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
 
 ## Regular Convolution Layer
 
-Regular convolution with same padding will be used in 1x1 convlution layer and it includes batch normalization with the ReLU activation function also.
+Regular convolution with same padding will be used in 1x1 convolution layer and it includes batch normalization with the ReLU activation function also.
 
 ```python
 def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
@@ -111,7 +111,7 @@ def bilinear_upsample(input_layer):
 ```
 ## Encoder Block
 
-Each encoder block is consisiting of one separable convolution layer that is having batch normalization and ReLU activation function.
+Each encoder block is consisting of one separable convolution layer that is having batch normalization and ReLU activation function.
 
 ```python
 def encoder_block(input_layer, filters, strides):
@@ -254,7 +254,7 @@ parameter that controls the size of weight and bias changes in learning of the t
 
 number of times the entire training dataset gets propagated through the network. I will try values ranging from 50 - 400 and based on loss/val_loss decrement rate I will decide which value is fit.
 
-Having my own tensorflow GPU enabled machine helped me alot in doing a good number of training runs to compare results of different paramters. Below are the captures of selected attempts along with the related training curve:
+Having my own tensorflow GPU enabled machine helped me alot in doing a good number of training runs to compare results of different parameters. Below are the captures of selected attempts along with the related training curve:
 
 <table><tbody>
     <tr><th align="center" colspan="3">Parameters Set 1</td></tr>
@@ -365,7 +365,7 @@ Images while at patrol without target:
 <p align="center"> <img src="./docs/misc/img_5.png"> </p>
 <p align="center"> <img src="./docs/misc/img_6.png"> </p>
 
-### Scores for images while the quad is on patrol and the target is not visable
+### Scores for images while the quad is on patrol and the target is not visible
 ```
 number of validation samples intersection over the union evaulated on 270
 average intersection over union for background is 0.9852442884819069
@@ -422,7 +422,7 @@ The recording of the test is on the following YouTube link
 
 # issues
 
-* Installation of Tensorflow GPU along with the right verison of CUDA/cuDNN drivers was a challenge. However I was able to find a good reference on this link 
+* Installation of Tensorflow GPU along with the right version of CUDA/cuDNN drivers was a challenge. However I was able to find a good reference on this link 
 
 https://www.tensorflow.org/install/install_sources
 
