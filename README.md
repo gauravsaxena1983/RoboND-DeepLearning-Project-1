@@ -336,6 +336,8 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
 
 To evaluate how well the FCN model is doing under different conditions. We will be using three different predictions available from the helper code provided and data provided (as mentioned above in data gathering section):
 
+Below is taken from one of the test trainings runs.
+
 ### following_images:
 Test how well the network can identify the target while following them.
 
@@ -404,6 +406,8 @@ average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative)
 
 So the score is: **0.404589892156**
 
+
+
 # Testing Model in the Simulator
 
 I have selected the best model from the above mentioned and copied it to the code folder, started the simulator, then ran the following command to test the model in simulator:
@@ -411,6 +415,9 @@ I have selected the best model from the above mentioned and copied it to the cod
 ```bash
 $ python3 follower.py --pred_viz model_weights
 ```
+The recording of the test is on the following YouTube link
+
+https://youtu.be/vR2EC16uoZU
 
 
 # Future Enhancements
