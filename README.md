@@ -89,6 +89,10 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
     return output_layer
 ```
 
+Batch normalization is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch.
+
+
+
 ## Regular Convolution Layer
 
 Regular convolution with same padding will be used in 1x1 convolution layer and it includes batch normalization with the ReLU activation function also.
@@ -254,7 +258,7 @@ parameter that controls the size of weight and bias changes in learning of the t
 
 ## Number of Epochs:
 
-number of times the entire training dataset gets propagated through the network. I will try values ranging from 50 - 400 and based on loss/val_loss decrement rate I will decide which value is fit.
+number of times the entire training dataset gets propagated through the network. An epoch is a single forward and backward pass of the whole dataset. This is used to increase the accuracy of the model without requiring more data. I will try values ranging from 50 - 400 and based on loss/val_loss decrement rate I will decide which value is fit.
 
 Having my own tensorflow GPU enabled machine helped me alot in doing a good number of training runs to compare results of different parameters. Below are the captures of selected attempts along with the related training curve:
 
