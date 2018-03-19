@@ -91,6 +91,8 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
 
 Batch normalization is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch.
 
+Batch normalization presents us with few advantages: Networks train faster, higher learning rates,Simplifies the creation of deeper networks, and provides a bit of regularization.
+
 
 
 ## Regular Convolution Layer
