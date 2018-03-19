@@ -99,6 +99,8 @@ Batch normalization presents us with few advantages: Networks train faster, high
 
 Regular convolution with same padding will be used in 1x1 convolution layer and it includes batch normalization with the ReLU activation function also.
 
+A 1x1 convolution simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
+
 ```python
 def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
     output_layer = layers.Conv2D(filters=filters, kernel_size=kernel_size, strides=strides, 
