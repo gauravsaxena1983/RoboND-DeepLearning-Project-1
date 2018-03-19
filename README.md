@@ -402,6 +402,9 @@ number true positives: 150, number false positives: 6, number false negatives: 1
 
 # Evaluation
 
+We will be using the IoU to calculate the final score. **IoU** is Intersection over Union, where the Intersection set is an **AND** operation (pixels that are truly part of a class AND are classified as part of the class by the network) and the Union is an **OR** operation (pixels that are truly part of that class + pixels that are classified as part of that class by the network).
+
+
 Sum all the true positives, etc from the three datasets to get a weight for the score: **0.6952573158425832**
 
 The IoU for the dataset that never includes the hero is excluded from grading: **0.581928277397**
