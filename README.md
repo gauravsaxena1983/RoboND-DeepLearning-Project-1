@@ -433,7 +433,7 @@ The recording of the test is on the following YouTube link
 
 # HTML version of model_training.ipynb notebook
 
-HTML version of the model_training.ipynb notebook is on this [link](./html/model_training.html)
+HTML version of the model_training.ipynb notebook is on this [link](http://html/model_training.html)
 
 # issues
 
