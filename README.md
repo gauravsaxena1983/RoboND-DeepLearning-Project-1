@@ -76,7 +76,9 @@ I did not record any data from simulator, I was able to do all required steps us
 
 ## Separable Convolutions Layer
 
-Separable convolution layers with same padding will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function.
+Separable convolutions, also known as depthwise separable convolutions, comprise of a convolution performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. The reduction in the parameters make separable convolutions quite efficient with improved runtime performance and are also, as a result, useful for mobile applications. They also have the added benefit of reducing overfitting to an extent, because of the fewer parameters.
+
+Separable convolution layers with same padding will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function as shown in below code:
 
 ```python
 def separable_conv2d_batchnorm(input_layer, filters, strides=1):
@@ -111,7 +113,7 @@ def bilinear_upsample(input_layer):
 ```
 ## Encoder Block
 
-Each encoder block is consisting of one separable convolution layer that is having batch normalization and ReLU activation function.
+FCN is comprised of an encoder and decoder. The encoder portion is a convolution network that reduces to a deeper 1x1 convolution layer, in contrast to a flat fully connected layer that would be used for basic classification of images. This difference has the effect of preserving spacial information from the image. Each encoder block is consisting of one separable convolution layer that is having batch normalization and ReLU activation function.
 
 ```python
 def encoder_block(input_layer, filters, strides):
