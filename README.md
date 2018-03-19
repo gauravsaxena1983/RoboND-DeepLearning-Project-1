@@ -456,14 +456,23 @@ https://www.tensorflow.org/install/install_sources
 
 # Additional Resources:
 
-http://iamaaditya.github.io/2016/03/one-by-one-convolution/
-http://deeplearning.net/software/theano/tutorial/conv_arithmetic.html
-https://stats.stackexchange.com/questions/194142/what-does-1x1-convolution-mean-in-a-neural-network
-https://www.quora.com/What-is-an-Encoder-Decoder-in-Deep-Learning/answer/Christian-Baumgartner-3?srid=ison
-https://courses.cs.washington.edu/courses/cse576/17sp/notes/Sachin_Talk.pdf
-https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/image_segmentation.html
-https://hackernoon.com/autoencoders-deep-learning-bits-1-11731e200694
-http://blog.qure.ai/notes/semantic-segmentation-deep-learning-review
-https://wiki.tum.de/display/lfdv/Image+Semantic+Segmentation
-http://warmspringwinds.github.io/tensorflow/tf-slim/2016/11/22/upsampling-and-image-segmentation-with-tensorflow-and-tf-slim/
+* http://iamaaditya.github.io/2016/03/one-by-one-convolution/
+
+* http://deeplearning.net/software/theano/tutorial/conv_arithmetic.html
+
+* https://stats.stackexchange.com/questions/194142/what-does-1x1-convolution-mean-in-a-neural-network
+
+* https://www.quora.com/What-is-an-Encoder-Decoder-in-Deep-Learning/answer/Christian-Baumgartner-3?srid=ison
+
+* https://courses.cs.washington.edu/courses/cse576/17sp/notes/Sachin_Talk.pdf
+
+* https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/image_segmentation.html
+
+* https://hackernoon.com/autoencoders-deep-learning-bits-1-11731e200694
+
+* http://blog.qure.ai/notes/semantic-segmentation-deep-learning-review
+
+* https://wiki.tum.de/display/lfdv/Image+Semantic+Segmentation
+
+* http://warmspringwinds.github.io/tensorflow/tf-slim/2016/11/22/upsampling-and-image-segmentation-with-tensorflow-and-tf-slim/
 
