@@ -431,6 +431,10 @@ The recording of the test is on the following YouTube link
 
 [![test video](http://img.youtube.com/vi/vR2EC16uoZU/default.jpg)](http://www.youtube.com/watch?v=vR2EC16uoZU)
 
+# HTML version of model_training.ipynb notebook
+
+HTML version of the model_training.ipynb notebook is on this [link](./html/model_training.html)
+
 # issues
 
 * Installation of Tensorflow GPU along with the right version of CUDA/cuDNN drivers was a challenge. However I was able to find a good reference on this link 
