@@ -225,7 +225,9 @@ And the FCN model is as shown below:
 
 <p align="center"> <img src="./docs/misc/fcn_diagram.png"> </p>
 
-In this project we are using FCN to track a hero, the same model can be used to track any other object by changing the mask data. for example we can include a second person in the mask data and color it with a 3rd color (currently red for hero and green for other people), retrain the network, then track the new color. This is the main reason we call this type of model as segmentation network (not classification network).
+# Using the same FCN Model to follow other objects:
+
+In this project we are using FCN to track a hero, the same model can be used to track any other object just by changing the mask data. for example we can include a second person in the mask data and color it with a 3rd color (currently red for hero and green for other people), retrain the network, then track the new color. This is the main reason we call this type of model as segmentation network (not classification network).
 
 # Neural Network Hyper Parameters
 
@@ -266,11 +268,11 @@ When Using data set 1 and AWS batch=100: validation_steps=1184/100=11.84 **aprox
 
 ## Learning Rate:
 
-parameter that controls the size of weight and bias changes in learning of the training algorithm. I will try values such as 0.01, 0.001, 0.005 then using brute force will try to find the best fit.
+parameter that controls the size of weight and bias changes in learning of the training algorithm. I will try values such as 0.01, 0.001, 0.0001 then using brute force will try to find the best fit.
 
 ## Number of Epochs:
 
-number of times the entire training dataset gets propagated through the network. An epoch is a single forward and backward pass of the whole dataset. This is used to increase the accuracy of the model without requiring more data. I will try values ranging from 50 - 400 and based on loss/val_loss decrement rate I will decide which value is fit.
+number of times the entire training dataset gets propagated through the network. An epoch is a single forward and backward pass of the whole dataset. This is used to increase the accuracy of the model without requiring more data. I will try values ranging from 50 - 300 and based on loss/val_loss decrement rate I will decide which value is fit.
 
 Having my own tensorflow GPU enabled machine helped me alot in doing a good number of training runs to compare results of different parameters. Below are the captures of selected attempts along with the related training curve:
 
@@ -386,11 +388,7 @@ Images while following the target:
 
 ### Scores for while the quad is following behind the target. 
 ```
-number of validation samples intersection over the union evaulated on 542
-average intersection over union for background is 0.9946233635164803
-average intersection over union for other people is 0.35554427678476996
-average intersection over union for the hero is 0.9043385744932508
-number true positives: 539, number false positives: 0, number false negatives: 0
+
 ```
 
 ### patrol_non_targ:
@@ -404,11 +402,7 @@ Images while at patrol without target:
 
 ### Scores for images while the quad is on patrol and the target is not visible
 ```
-number of validation samples intersection over the union evaulated on 270
-average intersection over union for background is 0.9852442884819069
-average intersection over union for other people is 0.6481070478441583
-average intersection over union for the hero is 0.0
-number true positives: 0, number false positives: 145, number false negatives: 0
+
 ```
 
 ### patrol_with_targ: 
@@ -422,11 +416,7 @@ Images while at patrol with target:
 
 ### This score measures how well the neural network can detect the target from far away
 ```
-number of validation samples intersection over the union evaulated on 322
-average intersection over union for background is 0.9960849086994017
-average intersection over union for other people is 0.4355130043960404
-average intersection over union for the hero is 0.25951798030115997
-number true positives: 150, number false positives: 6, number false negatives: 151
+
 ```
 
 # Evaluation
