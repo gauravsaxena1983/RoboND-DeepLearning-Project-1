@@ -350,6 +350,25 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     </tr>
 </tbody></table>
 
+<table><tbody>
+    <tr><th align="center" colspan="3">Parameters Set 5</td></tr>
+    <tr><th align="center">Parameter</th><th align="center">Value</th><td align="center" rowspan="10">
+    <img src="./docs/misc/train_curve_5.png"></td></tr>
+    <tr><td align="left">learning_rate</td>   <td align="center">0.001</td></tr>
+    <tr><td align="left">batch_size</td>      <td align="center">100</td></tr>
+    <tr><td align="left">num_epochs</td>      <td align="center">200</td></tr>
+    <tr><td align="left">steps_per_epoch</td> <td align="center">41</td></tr>
+    <tr><td align="left">validation_steps</td><td align="center">12</td></tr>
+    <tr><td align="left">workers</td>         <td align="center">4</td></tr>
+    <tr><td align="left">train_loss</td>      <td align="center"></td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center"></td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">0.000000000000</td></tr>
+    <tr>
+    <td align="center" colspan="2"><a href="./data/weights/config_model_weights_05">Model Configuration</a></td>
+    <td align="center"><a href="./data/weights/model_weights_05">Model Weights</a></td>
+    </tr>
+</tbody></table>
+
 # Prediction
 
 To evaluate how well the FCN model is doing under different conditions. We will be using three different predictions available from the helper code provided and data provided (as mentioned above in data gathering section):
