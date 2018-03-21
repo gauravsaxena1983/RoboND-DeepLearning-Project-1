@@ -80,7 +80,7 @@ when we convert our last fully connected (FC) layer of the CNN to a convolutiona
 
 One problem with this approach is that we **lose some resolution** by just doing this because the activations were downscaled on a lot of steps. To solve this problem we also **get some activation from previous layers** and sum/interpolate them together.
 
-Next;
+
 
 ## Separable Convolutions Layer
 
@@ -129,6 +129,8 @@ def bilinear_upsample(input_layer):
 ```
 
 **FCN is comprised of an encoder and decoder blocks**;
+
+<p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
 
 ## Encoder Block
 
