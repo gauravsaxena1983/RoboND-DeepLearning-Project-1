@@ -78,7 +78,9 @@ A Fully Convolutional neural network (FCN) is a normal CNN, where the last fully
 
 when we convert our last fully connected (FC) layer of the CNN to a convolutional layer we choose our new conv layer to be big enough we will have this localization effect scaled up to our input image size then activate pixels to indicate objects and their approximate locations in the scene.
 
-One problem with this approach is that we lose some resolution by just doing this because the activations were downscaled on a lot of steps. To solve this problem we also get some activation from previous layers and sum/interpolate them together.
+One problem with this approach is that we **lose some resolution** by just doing this because the activations were downscaled on a lot of steps. To solve this problem we also **get some activation from previous layers** and sum/interpolate them together.
+
+Next;
 
 ## Separable Convolutions Layer
 
@@ -125,9 +127,23 @@ def bilinear_upsample(input_layer):
     output_layer = BilinearUpSampling2D((2,2))(input_layer)
     return output_layer
 ```
+
+**FCN is comprised of an encoder and decoder blocks**;
+
 ## Encoder Block
 
-FCN is comprised of an encoder and decoder. The encoder portion is a convolution network that reduces to a deeper 1x1 convolution layer, in contrast to a flat fully connected layer that would be used for basic classification of images. This difference has the effect of preserving spacial information from the image. Each encoder block is consisting of one separable convolution layer that is having batch normalization and ReLU activation function.
+**The Encoder** Takes an input image, aggregates features at multiple levels then generates a high-dimensional feature vector. 
+
+
+Why do we name it "encoder". Encoding, in general, means compressing with or without loss of information.
+Which case have we got here?
+Do we lose information?
+Which information do we lose?
+Which information does the decoder recover
+Which information is lost?
+
+
+In this project; Each encoder block is consisting of one separable convolution layer that is having batch normalization and ReLU activation function.
 
 ```python
 def encoder_block(input_layer, filters, strides):
@@ -140,7 +156,10 @@ def encoder_block(input_layer, filters, strides):
 
 ## Decoder Block
 
-Each decoder block is consisting of Upsampler to collect input from a previous layer with smaller size, a concatenate function to add upsampled layer to the input of decoder then pass the resulting output to two layers of separable conv+batch normalization+ReLU activation function.
+On the otherside of FCN, **The decoder** takes a highdimensional feature vector, decodes features aggregated by encoder at multiple levels and generates a semantic segmentation mask. 
+
+
+In this project; each decoder block is consisting of Upsampler to collect input from a previous layer with smaller size, a concatenate function to add upsampled layer to the input of decoder then pass the resulting output to two layers of separable conv+batch normalization+ReLU activation function.
 
 ```python
 def decoder_block(small_ip_layer, large_ip_layer, filters):
@@ -227,7 +246,12 @@ And the FCN model is as shown below:
 
 # Using the same FCN Model to follow other objects:
 
+Can the network model, as we trained, be used to track another object?
+if no, should we change the network? Data? Both?
+
 In this project we are using FCN to track a hero, the same model can be used to track any other object just by changing the mask data. for example we can include a second person in the mask data and color it with a 3rd color (currently blue for hero and green for other people), retrain the network, then track the new color. This is the main reason we call this type of model as segmentation network (not classification network).
+
+
 
 # Neural Network Hyper Parameters
 
