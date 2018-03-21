@@ -179,9 +179,9 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
     return output_layer
 ```
 
-## FCN Model:
+## Project FCN Model:
 
-The FCN model will have"
+IN this project the FCN model will have the following layers:
 
 * 3 Encoder Blocks
 * 1 1x1 Regular Conv Block
@@ -246,16 +246,9 @@ And the FCN model is as shown below:
 
 <p align="center"> <img src="./docs/misc/fcn_diagram.png"> </p>
 
-# Using the same FCN Model to follow other objects:
+# Selection of Neural Network Hyper Parameters:
 
-Can the network model, as we trained, be used to track another object?
-if no, should we change the network? Data? Both?
-
-In this project we are using FCN to track a hero, the same model can be used to track any other object just by changing the mask data. for example we can include a second person in the mask data and color it with a 3rd color (currently blue for hero and green for other people), retrain the network, then track the new color. This is the main reason we call this type of model as segmentation network (not classification network).
-
-
-
-# Neural Network Hyper Parameters
+In the following sections I will explain how each parameter was selected/adjusted:
 
 ## Batch Size:
 
