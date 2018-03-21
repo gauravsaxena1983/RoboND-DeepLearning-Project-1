@@ -375,7 +375,7 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
 
 To evaluate how well the FCN model is doing under different conditions. We will be using three different predictions available from the helper code provided and data provided (as mentioned above in data gathering section):
 
-Below is taken from one of the test trainings runs.
+Below is taken from one of the test trainings runs (**Parameters Set 5**).
 
 ### following_images:
 Test how well the network can identify the target while following them.
@@ -388,7 +388,11 @@ Images while following the target:
 
 ### Scores for while the quad is following behind the target. 
 ```
-
+number of validation samples intersection over the union evaulated on 542
+average intersection over union for background is 0.9959963386666738
+average intersection over union for other people is 0.3660663163859051
+average intersection over union for the hero is 0.9185733482600896
+number true positives: 539, number false positives: 0, number false negatives: 0
 ```
 
 ### patrol_non_targ:
@@ -402,7 +406,11 @@ Images while at patrol without target:
 
 ### Scores for images while the quad is on patrol and the target is not visible
 ```
-
+number of validation samples intersection over the union evaulated on 270
+average intersection over union for background is 0.9868389698527823
+average intersection over union for other people is 0.7295714908650386
+average intersection over union for the hero is 0.0
+number true positives: 0, number false positives: 55, number false negatives: 0
 ```
 
 ### patrol_with_targ: 
@@ -416,7 +424,11 @@ Images while at patrol with target:
 
 ### This score measures how well the neural network can detect the target from far away
 ```
-
+number of validation samples intersection over the union evaulated on 322
+average intersection over union for background is 0.9964080370721959
+average intersection over union for other people is 0.43491105745183406
+average intersection over union for the hero is 0.20501600195251274
+number true positives: 121, number false positives: 4, number false negatives: 180
 ```
 
 # Evaluation
@@ -424,9 +436,9 @@ Images while at patrol with target:
 We will be using the IoU to calculate the final score. **IoU** is Intersection over Union, where the Intersection set is an **AND** operation (pixels that are truly part of a class AND are classified as part of the class by the network) and the Union is an **OR** operation (pixels that are truly part of that class + pixels that are classified as part of that class by the network).
 
 
-Sum all the true positives, etc from the three datasets to get a weight for the score: **0.6952573158425832**
+Sum all the true positives, etc from the three datasets to get a weight for the score: **0.7341490545050056**
 
-The IoU for the dataset that never includes the hero is excluded from grading: **0.581928277397**
+The IoU for the dataset that never includes the hero is excluded from grading: **0.561794675106**
 
 The Final Grade Score is the pixel wise:
 
@@ -434,7 +446,7 @@ The Final Grade Score is the pixel wise:
 average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative))
 ```
 
-So the score is: **0.404589892156**
+So the score is: **0.412441029555**
 
 
 
