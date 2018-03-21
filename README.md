@@ -362,9 +362,9 @@ Having my own tensorflow GPU enabled machine helped me alot in doing a good numb
     <tr><td align="left">steps_per_epoch</td> <td align="center">41</td></tr>
     <tr><td align="left">validation_steps</td><td align="center">12</td></tr>
     <tr><td align="left">workers</td>         <td align="center">4</td></tr>
-    <tr><td align="left">train_loss</td>      <td align="center"></td></tr>
-    <tr><td align="left">val_loss</td>        <td align="center"></td></tr>
-    <tr><td align="left">final_score</td>     <td align="center">0.000000000000</td></tr>
+    <tr><td align="left">train_loss</td>      <td align="center">0.0091</td></tr>
+    <tr><td align="left">val_loss</td>        <td align="center">0.0280</td></tr>
+    <tr><td align="left">final_score</td>     <td align="center">0.412441029555</td></tr>
     <tr>
     <td align="center" colspan="2"><a href="./data/weights/config_model_weights_05">Model Configuration</a></td>
     <td align="center"><a href="./data/weights/model_weights_05">Model Weights</a></td>
