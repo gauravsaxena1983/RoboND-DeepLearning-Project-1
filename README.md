@@ -246,9 +246,9 @@ And the FCN model is as shown below:
 
 <p align="center"> <img src="./docs/misc/fcn_diagram.png"> </p>
 
-# Selection of Neural Network Hyper Parameters:
+# Selection of Hyper Parameters:
 
-In the following sections I will explain how each parameter was selected/adjusted:
+In the following sections I will explain how each parameter was selected/adjusted for this project:
 
 ## Batch Size:
 
