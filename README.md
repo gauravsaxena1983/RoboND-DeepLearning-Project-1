@@ -527,6 +527,8 @@ https://www.tensorflow.org/install/install_sources
 
 * Recording a bigger dataset capturing more angles/distances of the target will help in further improving the network accuracy.
 
+* Adding more layers will also help in capturing more contexts and improve accuracy of segmentation.
+
 * Changing learning rate can also be helpful in reducing learning time.
 
 
