@@ -42,6 +42,9 @@ When we convert our last fully connected (FC) layer of the CNN to a **1x1** conv
 
 One problem with this approach is that we **lose some resolution** every time we do convolution (**encoding or down-sampling**); for example if we are using max-pooling to reduce the size of the input, and allow the neural network to focus on only the most important elements. Max pooling does this by only retaining the maximum value for each filtered area, and removing the remaining values.
 
+<p align="center"> <img src="./docs/misc/max_pooling.png"> </p>
+
+
 To solve this problem we also **get some activation from previous layers** and sum/interpolate them together with the **up-sampled** outputs when **decoding** from the previous layer as shown in below diagram.
 
 <p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
