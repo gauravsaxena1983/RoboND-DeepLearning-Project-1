@@ -24,7 +24,11 @@ In each layer (2D or 3D), the kernal will be moving accross inputs in a predefin
 
 <p align="center"> <img src="./docs/misc/kernal_move.png"> </p>
 
-A **Fully Convolutional neural network (FCN)** is a normal CNN, where the last fully connected layer is substituted by another 1x1 Kernal convolution layer with a large "receptive field". The idea here is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
+A **Fully Convolutional neural network (FCN)** is a normal CNN, where the last fully connected layer is substituted by another 1x1 convolution layer with a large "receptive field". The idea here is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
+
+A 1x1 convolution simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
+
+
 
 When we convert our last fully connected (FC) layer of the CNN to a **1x1** convolutional layer we choose our new conv layer to be big enough thatwill enable us to have this localization effect scaled up to our original input image size then activate pixels to indicate objects and their approximate locations in the scene.
 
@@ -40,11 +44,6 @@ Batch normalization is based on the idea that, instead of just normalizing the i
 
 Batch normalization presents us with few advantages: Networks train faster, higher learning rates,Simplifies the creation of deeper networks, and provides a bit of regularization.
 
-## Regular Convolution Layer
-
-Regular convolution with same padding will be used in 1x1 convolution layer and it includes batch normalization with the ReLU activation function also.
-
-A 1x1 convolution simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
 
 ## Bilinear Upsampling Layer
 
