@@ -36,19 +36,15 @@ A **Fully Convolutional neural network (FCN)** is a normal CNN, where the last f
 
 A **1x1 convolution** simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
 
-When we convert our last fully connected (FC) layer of the CNN to a **1x1** convolutional layer we choose our new conv layer to be big enough thatwill enable us to have this localization effect scaled up to our original input image size then activate pixels to indicate objects and their approximate locations in the scene.
+When we convert our last fully connected (FC) layer of the CNN to a **1x1** convolutional layer we choose our new conv layer to be big enough so that it will enable us to have this localization effect scaled up to our original input image size then activate pixels to indicate objects and their approximate locations in the scene as shown in above figure.
 
-One problem with this approach is that we **lose some resolution** every time we do convolution (**encoding or down-sampling**); To solve this problem we also **get some activation from previous layers** and sum/interpolate them together with the **decoded or up-sampled** outputs from the previous layer. Below is the diagram to illustrate this:
+One problem with this approach is that we **lose some resolution** every time we do convolution (**encoding or down-sampling**); To solve this problem we also **get some activation from previous layers** and sum/interpolate them together with the **decoded or up-sampled** outputs from the previous layer as shown in below diagram.
 
 <p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
 
+Upsampling by a factor of 2 is generally used in the decoder blocks to recover resolution then add it with the previous layer output. Different factors of upsampling can be used if required.
 
-
-Separable convolutions, is similar to what explained above (also known as **depthwise separable convolutions**), comprise of a convolution performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. The reduction in the parameters make separable convolutions quite efficient with improved runtime performance and are also, as a result, useful for mobile applications. They also have the added benefit of reducing overfitting to an extent, because of the fewer parameters.
-
-Batch normalization is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch.
-
-Batch normalization presents us with few advantages: Networks train faster, higher learning rates,Simplifies the creation of deeper networks, and provides a bit of regularization.
+**Batch normalization** is also used in each FCN layer and it is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch. Batch normalization presents us with few advantages: Networks train faster, higher learning rates,Simplifies the creation of deeper networks, and provides a bit of regularization.
 
 
 ## Bilinear Upsampling Layer
