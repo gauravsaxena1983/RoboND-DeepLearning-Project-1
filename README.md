@@ -10,19 +10,19 @@ In this project we will train a fully convolutional (FCN) deep neural network to
 
 <p align="center"> <img src="./docs/misc/simulator.png"> </p>
 
-# Fully Convolutional Network (FCN):
+# What is Fully Convolutional Network (FCN) ?:
 
-A normal fully connected layer CNN looks like following:
+A normal convolutional neural network layer (**CNN layer**) with a 2D kernal of 5x5 looks like following:
 
-<p align="center"> <img src="./docs/misc/fc_layer.jpeg"> </p>
+<p align="center"> <img src="./docs/misc/cnn.png"> </p>
 
-While a convolutional layer will consist of a kernal moving across the inputs using a specific stride size:
-
-<p align="center"> <img src="./docs/misc/kernal_move.png"> </p>
-
-and recording a context in each move:
+a CNN with a 3D Kernal of size (3x3x3) will look like this:
 
 <p align="center"> <img src="./docs/misc/conv_layer.png"> </p>
+
+The kernal will be moving accross inputs in a predefined stride and record a context (as output) in each move:
+
+<p align="center"> <img src="./docs/misc/kernal_move.png"> </p>
 
 A Fully Convolutional neural network (FCN) is a normal CNN, where the last fully connected layer is substituted by another convolution layer with a large "receptive field". The idea is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
 
