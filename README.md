@@ -26,6 +26,8 @@ In each layer (2D or 3D), the kernal will be moving accross inputs in a predefin
 
 a CNN with multiple CNN layers will look as following:
 
+<p align="center"> <img src="./docs/misc/cnn.jpg"> </p>
+
 CNNs are usually used to classify objects inside an image as shown above, the output is a class of car, dog, etc.
 
 A **Fully Convolutional neural network (FCN)** is a normal CNN, where the last fully connected layer (classification layer) is substituted by another 1x1 convolution layer with a large "receptive field". The idea here is to capture the global context of the scene and enable us to tell what are the objects **and their approximate locations** in the scene. The output will be scene segmentation not only object classfication as it is the case in CNN.
