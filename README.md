@@ -11,6 +11,69 @@ In this project we will train a deep neural network to identify and track a targ
 <p align="center"> <img src="./docs/misc/simulator.png"> </p>
 
 
+
+
+
+# Fully Convolutional Network (FCN) Layers:
+
+A Fully Convolutional neural network (FCN) is a normal CNN, where the last fully connected layer is substituted by another convolution layer with a large "receptive field". The idea is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
+
+when we convert our last fully connected (FC) layer of the CNN to a convolutional layer we choose our new conv layer to be big enough we will have this localization effect scaled up to our input image size then activate pixels to indicate objects and their approximate locations in the scene.
+
+One problem with this approach is that we **lose some resolution** by just doing this because the activations were downscaled on a lot of steps. To solve this problem we also **get some activation from previous layers** and sum/interpolate them together.
+
+
+
+## Separable Convolutions Layer
+
+Separable convolutions, also known as depthwise separable convolutions, comprise of a convolution performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. The reduction in the parameters make separable convolutions quite efficient with improved runtime performance and are also, as a result, useful for mobile applications. They also have the added benefit of reducing overfitting to an extent, because of the fewer parameters.
+
+Separable convolution layers with same padding will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function as shown in below code:
+
+```python
+def separable_conv2d_batchnorm(input_layer, filters, strides=1):
+    output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
+                             padding='same', activation='relu')(input_layer)
+    
+    output_layer = layers.BatchNormalization()(output_layer) 
+    return output_layer
+```
+
+Batch normalization is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch.
+
+Batch normalization presents us with few advantages: Networks train faster, higher learning rates,Simplifies the creation of deeper networks, and provides a bit of regularization.
+
+## Regular Convolution Layer
+
+Regular convolution with same padding will be used in 1x1 convolution layer and it includes batch normalization with the ReLU activation function also.
+
+A 1x1 convolution simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
+
+## Bilinear Upsampling Layer
+
+Upsampling is used in the decoder block of the FCN, Upsampling by a factor of 2 is generally used, however we can try out different factors as well.
+
+**FCN is comprised of an encoder and decoder blocks**;
+
+<p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
+
+## Encoder Block
+
+**The Encoder** Takes an input image, aggregates features at multiple levels then generates a high-dimensional feature vector. 
+
+
+Why do we name it "encoder". Encoding, in general, means compressing with or without loss of information.
+Which case have we got here?
+Do we lose information?
+Which information do we lose?
+Which information does the decoder recover
+Which information is lost?
+
+## Decoder Block
+
+On the otherside of FCN, **The decoder** takes a highdimensional feature vector, decodes features aggregated by encoder at multiple levels and generates a semantic segmentation mask. 
+
+
 # Software & Hardware used for training:
 
 In order to get the best learning from the lab I have decided to use both my own GPU enabled laptop hardware and AWS instance to do the learning.
@@ -70,69 +133,6 @@ I did not record any data from simulator, I was able to do all required steps us
     <td align="left">/data/sample_evalution_data/patrol_with_targ</td>
        <td align="left"> 322 images + 322 masks</td></tr>
 </tbody></table>
-
-
-# Fully Convolutional Network (FCN) Layers:
-
-A Fully Convolutional neural network (FCN) is a normal CNN, where the last fully connected layer is substituted by another convolution layer with a large "receptive field". The idea is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
-
-when we convert our last fully connected (FC) layer of the CNN to a convolutional layer we choose our new conv layer to be big enough we will have this localization effect scaled up to our input image size then activate pixels to indicate objects and their approximate locations in the scene.
-
-One problem with this approach is that we **lose some resolution** by just doing this because the activations were downscaled on a lot of steps. To solve this problem we also **get some activation from previous layers** and sum/interpolate them together.
-
-
-
-## Separable Convolutions Layer
-
-Separable convolutions, also known as depthwise separable convolutions, comprise of a convolution performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. The reduction in the parameters make separable convolutions quite efficient with improved runtime performance and are also, as a result, useful for mobile applications. They also have the added benefit of reducing overfitting to an extent, because of the fewer parameters.
-
-Separable convolution layers with same padding will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function as shown in below code:
-
-```python
-def separable_conv2d_batchnorm(input_layer, filters, strides=1):
-    output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
-                             padding='same', activation='relu')(input_layer)
-    
-    output_layer = layers.BatchNormalization()(output_layer) 
-    return output_layer
-```
-
-Batch normalization is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch.
-
-Batch normalization presents us with few advantages: Networks train faster, higher learning rates,Simplifies the creation of deeper networks, and provides a bit of regularization.
-
-## Regular Convolution Layer
-
-Regular convolution with same padding will be used in 1x1 convolution layer and it includes batch normalization with the ReLU activation function also.
-
-A 1x1 convolution simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
-
-## Bilinear Upsampling Layer
-
-Upsampling is used in the decoder block of the FCN, Upsampling by a factor of 2 is generally used, however we can try out different factors as well.
-
-**FCN is comprised of an encoder and decoder blocks**;
-
-<p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
-
-## Encoder Block
-
-**The Encoder** Takes an input image, aggregates features at multiple levels then generates a high-dimensional feature vector. 
-
-
-Why do we name it "encoder". Encoding, in general, means compressing with or without loss of information.
-Which case have we got here?
-Do we lose information?
-Which information do we lose?
-Which information does the decoder recover
-Which information is lost?
-
-
-
-## Decoder Block
-
-On the otherside of FCN, **The decoder** takes a highdimensional feature vector, decodes features aggregated by encoder at multiple levels and generates a semantic segmentation mask. 
-
 
 ## Project Code:
 
