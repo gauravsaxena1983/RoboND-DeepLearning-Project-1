@@ -24,15 +24,13 @@ and recording a context in each move:
 
 <p align="center"> <img src="./docs/misc/conv_layer.png"> </p>
 
-
 A Fully Convolutional neural network (FCN) is a normal CNN, where the last fully connected layer is substituted by another convolution layer with a large "receptive field". The idea is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
 
 when we convert our last fully connected (FC) layer of the CNN to a convolutional layer we choose our new conv layer to be big enough we will have this localization effect scaled up to our input image size then activate pixels to indicate objects and their approximate locations in the scene.
 
-One problem with this approach is that we **lose some resolution** by just doing this because the activations were downscaled on a lot of steps. To solve this problem we also **get some activation from previous layers** and sum/interpolate them together.
+One problem with this approach is that we **lose some resolution** every time we do convolution (down-sampling); To solve this problem we also **get some activation from previous layers** and sum/interpolate them together with the up-sampled outputs from the previous layer. Below is the diagram to illustrate this:
 
 <p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
-
 
 
 Separable convolutions, also known as depthwise separable convolutions, comprise of a convolution performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. The reduction in the parameters make separable convolutions quite efficient with improved runtime performance and are also, as a result, useful for mobile applications. They also have the added benefit of reducing overfitting to an extent, because of the fewer parameters.
