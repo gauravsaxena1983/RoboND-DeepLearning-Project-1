@@ -42,7 +42,7 @@ A **1x1 convolution** simply maps an input pixel with all it's channels to an ou
 
 When we convert our last fully connected (FC) layer of the CNN to a **1x1** convolutional layer we choose our new conv layer to be big enough so that it will enable us to have this localization effect scaled up to our original input image size then activate pixels to indicate objects and their approximate locations in the scene as shown in above figure. replacement of fully-connected layers with convolutional layers presents an added advantage that during inference (testing your model), you can feed images of any size into your trained network.
 
-One problem with this approach is that we **lose some resolution** every time we do convolution (**encoding or down-sampling**); for example if we are using max-pooling to reduce the size of the input, and allow the neural network to focus on only the most important elements. Max pooling does this by only retaining the maximum value for each filtered area, and removing the remaining values.
+One problem with this approach is that we **lose some information** every time we do convolution (**encoding or down-sampling**); we keep the smaller picture (the local context) and lose the bigger picture (the global context) for example if we are using max-pooling to reduce the size of the input, and allow the neural network to focus on only the most important elements. Max pooling does this by only retaining the maximum value for each filtered area, and removing the remaining values.
 
 <p align="center"> <img src="./docs/misc/max_pooling.png"> </p>
 
