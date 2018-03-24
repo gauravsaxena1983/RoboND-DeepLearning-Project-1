@@ -56,13 +56,13 @@ To solve this problem we also get some activation from previous layers (What we 
 
 So, in summary FCN is consisting of the following components:
 
-* **Encoder blocks**: that will take inputs from previous layers, compress it down to a context losing in the way some of the resolution.
+* **Encoder blocks**: that will take inputs from previous layers, compress it down to a context losing in the way some of the resolution (the bigger picture).
 
 * **1x1 Convolution block**: that will reduce depth and capture the global context of the scene.
 
-* **Decoder blocks**: that will take inputs from previous layers, decompress it, by up-sampling and adding inputs from previous encoder blocks to recover some of the lost information.
+* **Decoder blocks**: that will take inputs from previous layers, decompress it, by up-sampling and adding inputs from previous encoder blocks through skip connections to recover some of the lost information hence do the precise segmentation.
 
-* **Softmax activation**: takes outputs from last decoder block and activate output pixels to indicate class and location of objects.
+* **Softmax activation**: normal convolution layer takes outputs from last decoder block and activate output pixels to indicate class and location of objects (semantic segmentation).
 
 
 # When and why we use FCN ?
