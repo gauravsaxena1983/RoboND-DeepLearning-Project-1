@@ -14,7 +14,7 @@ In this project we will train a fully convolutional (FCN) deep neural network to
 
 A normal fully connected layer CNN looks like following:
 
-<p align="center"> <img src="./docs/misc/fc_layer.png"> </p>
+<p align="center"> <img src="./docs/misc/fc_layer.jpeg"> </p>
 
 While a convolutional layer will consist of a kernal moving across the inputs using a specific stride size:
 
