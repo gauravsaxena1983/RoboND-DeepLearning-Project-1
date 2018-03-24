@@ -26,9 +26,9 @@ In each layer (2D or 3D), the kernal will be moving accross inputs in a predefin
 
 A **Fully Convolutional neural network (FCN)** is a normal CNN, where the last fully connected layer is substituted by another 1x1 convolution layer with a large "receptive field". The idea here is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
 
-A 1x1 convolution simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
+<p align="center"> <img src="./docs/misc/fcn.png"> </p>
 
-
+A **1x1 convolution** simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
 
 When we convert our last fully connected (FC) layer of the CNN to a **1x1** convolutional layer we choose our new conv layer to be big enough thatwill enable us to have this localization effect scaled up to our original input image size then activate pixels to indicate objects and their approximate locations in the scene.
 
@@ -36,9 +36,9 @@ One problem with this approach is that we **lose some resolution** every time we
 
 <p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
 
+
+
 Separable convolutions, is similar to what explained above (also known as **depthwise separable convolutions**), comprise of a convolution performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. The reduction in the parameters make separable convolutions quite efficient with improved runtime performance and are also, as a result, useful for mobile applications. They also have the added benefit of reducing overfitting to an extent, because of the fewer parameters.
-
-
 
 Batch normalization is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch.
 
