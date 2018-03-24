@@ -531,6 +531,8 @@ https://www.tensorflow.org/install/install_sources
 
 * Changing learning rate can also be helpful in reducing learning time.
 
+* Adding skip connections can improve results but up to a certain number of connections only based on number of layers that we have.
+
 
 # Additional Resources:
 
