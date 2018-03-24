@@ -10,25 +10,25 @@ In this project we will train a fully convolutional (FCN) deep neural network to
 
 <p align="center"> <img src="./docs/misc/simulator.png"> </p>
 
-# What is Fully Convolutional Network (FCN) ?:
+# What is Fully Convolutional Network (FCN) ?
 
-A normal convolutional neural network layer (**CNN layer**) with a 2D kernal of 5x5 looks like following:
+A normal convolutional neural network layer (**CNN layer**) with a **2D** Kernal size (5x5) looks like following:
 
 <p align="center"> <img src="./docs/misc/cnn.png"> </p>
 
-a CNN with a 3D Kernal of size (3x3x3) will look like this:
+While **CNN layer** with a **3D** Kernal size (3x3x3) will look like this:
 
 <p align="center"> <img src="./docs/misc/conv_layer.png"> </p>
 
-The kernal will be moving accross inputs in a predefined stride and record a context (as output) in each move:
+In each layer (2D or 3D), the kernal will be moving accross inputs in a predefined stride and record a context (as output) in each move:
 
 <p align="center"> <img src="./docs/misc/kernal_move.png"> </p>
 
-A Fully Convolutional neural network (FCN) is a normal CNN, where the last fully connected layer is substituted by another convolution layer with a large "receptive field". The idea is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
+A **Fully Convolutional neural network (FCN)** is a normal CNN, where the last fully connected layer is substituted by another 1x1 Kernal convolution layer with a large "receptive field". The idea here is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
 
-when we convert our last fully connected (FC) layer of the CNN to a convolutional layer we choose our new conv layer to be big enough we will have this localization effect scaled up to our input image size then activate pixels to indicate objects and their approximate locations in the scene.
+When we convert our last fully connected (FC) layer of the CNN to a **1x1** convolutional layer we choose our new conv layer to be big enough thatwill enable us to have this localization effect scaled up to our original input image size then activate pixels to indicate objects and their approximate locations in the scene.
 
-One problem with this approach is that we **lose some resolution** every time we do convolution (down-sampling); To solve this problem we also **get some activation from previous layers** and sum/interpolate them together with the up-sampled outputs from the previous layer. Below is the diagram to illustrate this:
+One problem with this approach is that we **lose some resolution** every time we do convolution (**encoding or down-sampling**); To solve this problem we also **get some activation from previous layers** and sum/interpolate them together with the **decoded or up-sampled** outputs from the previous layer. Below is the diagram to illustrate this:
 
 <p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
 
