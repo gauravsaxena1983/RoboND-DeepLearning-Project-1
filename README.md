@@ -24,6 +24,8 @@ In each layer (2D or 3D), the kernal will be moving accross inputs in a predefin
 
 <p align="center"> <img src="./docs/misc/kernal_move.png"> </p>
 
+A CNN might have several layers, each layer might capture a different level in the hierarchy of objects. The first layer is the lowest level in the hierarchy, where the CNN generally classifies small parts of the image into simple shapes like horizontal and vertical lines and simple blobs of colors. The subsequent layers tend to be higher levels in the hierarchy and generally classify more complex ideas like shapes (combinations of lines), and eventually full objects like cars.
+
 a CNN with multiple CNN layers will look as following:
 
 <p align="center"> <img src="./docs/misc/cnn.jpg"> </p>
@@ -38,7 +40,9 @@ A **1x1 convolution** simply maps an input pixel with all it's channels to an ou
 
 When we convert our last fully connected (FC) layer of the CNN to a **1x1** convolutional layer we choose our new conv layer to be big enough so that it will enable us to have this localization effect scaled up to our original input image size then activate pixels to indicate objects and their approximate locations in the scene as shown in above figure.
 
-One problem with this approach is that we **lose some resolution** every time we do convolution (**encoding or down-sampling**); To solve this problem we also **get some activation from previous layers** and sum/interpolate them together with the **decoded or up-sampled** outputs from the previous layer as shown in below diagram.
+One problem with this approach is that we **lose some resolution** every time we do convolution (**encoding or down-sampling**); for example if we are using max-pooling to reduce the size of the input, and allow the neural network to focus on only the most important elements. Max pooling does this by only retaining the maximum value for each filtered area, and removing the remaining values.
+
+To solve this problem we also **get some activation from previous layers** and sum/interpolate them together with the **up-sampled** outputs when **decoding** from the previous layer as shown in below diagram.
 
 <p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
 
