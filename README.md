@@ -10,6 +10,69 @@ In this project we will train a deep neural network to identify and track a targ
 
 <p align="center"> <img src="./docs/misc/simulator.png"> </p>
 
+# Fully Convolutional Network (FCN):
+
+A normal fully connected layer CNN looks like following:
+
+<p align="center"> <img src="./docs/misc/fc_layer.png"> </p>
+
+While a convolutional layer will consist of a kernal moving across the inputs using a specific stride size:
+
+<p align="center"> <img src="./docs/misc/kernal_move.png"> </p>
+
+and recording a context in each move:
+
+<p align="center"> <img src="./docs/misc/conv_layer.png"> </p>
+
+
+A Fully Convolutional neural network (FCN) is a normal CNN, where the last fully connected layer is substituted by another convolution layer with a large "receptive field". The idea is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
+
+when we convert our last fully connected (FC) layer of the CNN to a convolutional layer we choose our new conv layer to be big enough we will have this localization effect scaled up to our input image size then activate pixels to indicate objects and their approximate locations in the scene.
+
+One problem with this approach is that we **lose some resolution** by just doing this because the activations were downscaled on a lot of steps. To solve this problem we also **get some activation from previous layers** and sum/interpolate them together.
+
+<p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
+
+
+
+Separable convolutions, also known as depthwise separable convolutions, comprise of a convolution performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. The reduction in the parameters make separable convolutions quite efficient with improved runtime performance and are also, as a result, useful for mobile applications. They also have the added benefit of reducing overfitting to an extent, because of the fewer parameters.
+
+
+
+Batch normalization is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch.
+
+Batch normalization presents us with few advantages: Networks train faster, higher learning rates,Simplifies the creation of deeper networks, and provides a bit of regularization.
+
+## Regular Convolution Layer
+
+Regular convolution with same padding will be used in 1x1 convolution layer and it includes batch normalization with the ReLU activation function also.
+
+A 1x1 convolution simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
+
+## Bilinear Upsampling Layer
+
+Upsampling is used in the decoder block of the FCN, Upsampling by a factor of 2 is generally used, however we can try out different factors as well.
+
+**FCN is comprised of an encoder and decoder blocks**;
+
+<p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
+
+## Encoder Block
+
+**The Encoder** Takes an input image, aggregates features at multiple levels then generates a high-dimensional feature vector. 
+
+
+Why do we name it "encoder". Encoding, in general, means compressing with or without loss of information.
+Which case have we got here?
+Do we lose information?
+Which information do we lose?
+Which information does the decoder recover
+Which information is lost?
+
+## Decoder Block
+
+On the otherside of FCN, **The decoder** takes a highdimensional feature vector, decodes features aggregated by encoder at multiple levels and generates a semantic segmentation mask. 
+
 
 # Software & Hardware used for training:
 
@@ -71,20 +134,11 @@ I did not record any data from simulator, I was able to do all required steps us
        <td align="left"> 322 images + 322 masks</td></tr>
 </tbody></table>
 
+## Project Code:
 
-# Fully Convolutional Network (FCN) Layers:
+Following sections will list all used layers along with its python code:
 
-A Fully Convolutional neural network (FCN) is a normal CNN, where the last fully connected layer is substituted by another convolution layer with a large "receptive field". The idea is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
-
-when we convert our last fully connected (FC) layer of the CNN to a convolutional layer we choose our new conv layer to be big enough we will have this localization effect scaled up to our input image size then activate pixels to indicate objects and their approximate locations in the scene.
-
-One problem with this approach is that we **lose some resolution** by just doing this because the activations were downscaled on a lot of steps. To solve this problem we also **get some activation from previous layers** and sum/interpolate them together.
-
-
-
-## Separable Convolutions Layer
-
-Separable convolutions, also known as depthwise separable convolutions, comprise of a convolution performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. The reduction in the parameters make separable convolutions quite efficient with improved runtime performance and are also, as a result, useful for mobile applications. They also have the added benefit of reducing overfitting to an extent, because of the fewer parameters.
+#### Separable convolution layer:
 
 Separable convolution layers with same padding will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function as shown in below code:
 
@@ -97,46 +151,18 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
     return output_layer
 ```
 
-Batch normalization is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch.
+### Regular Conv layer:
 
-Batch normalization presents us with few advantages: Networks train faster, higher learning rates,Simplifies the creation of deeper networks, and provides a bit of regularization.
+Regular convolution block is used, with batch normalization and Relu activation.
 
-## Regular Convolution Layer
-
-Regular convolution with same padding will be used in 1x1 convolution layer and it includes batch normalization with the ReLU activation function also.
-
-A 1x1 convolution simply maps an input pixel with all it's channels to an output pixel, not looking at anything around itself. It is often used to reduce the number of depth channels, since it is often very slow to multiply volumes with extremely large depths.
-
-## Bilinear Upsampling Layer
-
-Upsampling is used in the decoder block of the FCN, Upsampling by a factor of 2 is generally used, however we can try out different factors as well.
-
-**FCN is comprised of an encoder and decoder blocks**;
-
-<p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
-
-## Encoder Block
-
-**The Encoder** Takes an input image, aggregates features at multiple levels then generates a high-dimensional feature vector. 
-
-
-Why do we name it "encoder". Encoding, in general, means compressing with or without loss of information.
-Which case have we got here?
-Do we lose information?
-Which information do we lose?
-Which information does the decoder recover
-Which information is lost?
-
-
-
-## Decoder Block
-
-On the otherside of FCN, **The decoder** takes a highdimensional feature vector, decodes features aggregated by encoder at multiple levels and generates a semantic segmentation mask. 
-
-
-## Project Code:
-
-Following sections will list all used layers along with its python code:
+```python
+def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
+    output_layer = layers.Conv2D(filters=filters, kernel_size=kernel_size, strides=strides, 
+                      padding='same', activation='relu')(input_layer)
+    
+    output_layer = layers.BatchNormalization()(output_layer) 
+    return output_layer
+```
 
 ### Encoder Blocks
 
@@ -151,20 +177,7 @@ def encoder_block(input_layer, filters, strides):
     return output_layer
 ```
 
-### 1 Regular Conv Block
-
-1 regular convolution block is used, with batch normalization and Relu activation.
-
-```python
-def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
-    output_layer = layers.Conv2D(filters=filters, kernel_size=kernel_size, strides=strides, 
-                      padding='same', activation='relu')(input_layer)
-    
-    output_layer = layers.BatchNormalization()(output_layer) 
-    return output_layer
-```
-
-### 3 Decoder Blocks
+### Decoder Blocks
 
 3 decoder blocks are used, each decoder block is consisting of Upsampler to collect input from a previous layer with smaller size, a concatenate function to add upsampled layer to the input of decoder then pass the resulting output to two layers of separable conv+batch normalization+ReLU activation function.
 
@@ -184,9 +197,9 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
     return output_layer
 ```
 
-### 1 Softmax activation layer using same padding
+### Softmax activation
 
-Last layer is with softmax activation:
+Last layer is regular convolution layer with softmax activation and same padding:
 
 ```python
     outputs = layers.Conv2D(num_classes, 1, activation='softmax', padding='same')(layer07)
@@ -194,7 +207,7 @@ Last layer is with softmax activation:
     
 ### the FCN model:
 
-Below is the code calling blocks for all layers, I have added a print function after each block to help showing the size of each layer in the model.
+Below is the code calling blocks explained above, I have added a print function after each block to help showing the size of each layer in the model.
 
 ```python
 def fcn_model(inputs, num_classes):
@@ -248,9 +261,10 @@ layer06 shape: (?, 80, 80, 64)   	Decoder Block 2
 layer07 shape: (?, 160, 160, 32) 	Decoder Block 3
 Outputs shape: (?, 160, 160, 3) 	Output Size in Pixel
 ```
-And the FCN model is as shown below:
+And the FCN model diagram is as shown below:
 
 <p align="center"> <img src="./docs/misc/fcn_diagram.png"> </p>
+
 
 # Selection of Hyper Parameters:
 
