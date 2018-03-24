@@ -10,11 +10,7 @@ In this project we will train a deep neural network to identify and track a targ
 
 <p align="center"> <img src="./docs/misc/simulator.png"> </p>
 
-
-
-
-
-# Fully Convolutional Network (FCN) Layers:
+# Fully Convolutional Network (FCN):
 
 A Fully Convolutional neural network (FCN) is a normal CNN, where the last fully connected layer is substituted by another convolution layer with a large "receptive field". The idea is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
 
@@ -28,16 +24,7 @@ One problem with this approach is that we **lose some resolution** by just doing
 
 Separable convolutions, also known as depthwise separable convolutions, comprise of a convolution performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. The reduction in the parameters make separable convolutions quite efficient with improved runtime performance and are also, as a result, useful for mobile applications. They also have the added benefit of reducing overfitting to an extent, because of the fewer parameters.
 
-Separable convolution layers with same padding will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function as shown in below code:
 
-```python
-def separable_conv2d_batchnorm(input_layer, filters, strides=1):
-    output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
-                             padding='same', activation='relu')(input_layer)
-    
-    output_layer = layers.BatchNormalization()(output_layer) 
-    return output_layer
-```
 
 Batch normalization is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch.
 
@@ -138,6 +125,32 @@ I did not record any data from simulator, I was able to do all required steps us
 
 Following sections will list all used layers along with its python code:
 
+#### Separable convolution layer:
+
+Separable convolution layers with same padding will be used in encoder blocks of the FCN and it includes batch normalization with the ReLU activation function as shown in below code:
+
+```python
+def separable_conv2d_batchnorm(input_layer, filters, strides=1):
+    output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
+                             padding='same', activation='relu')(input_layer)
+    
+    output_layer = layers.BatchNormalization()(output_layer) 
+    return output_layer
+```
+
+### Regular Conv layer:
+
+Regular convolution block is used, with batch normalization and Relu activation.
+
+```python
+def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
+    output_layer = layers.Conv2D(filters=filters, kernel_size=kernel_size, strides=strides, 
+                      padding='same', activation='relu')(input_layer)
+    
+    output_layer = layers.BatchNormalization()(output_layer) 
+    return output_layer
+```
+
 ### Encoder Blocks
 
 3 Encoder blocks are used, each encoder block is consisting of one separable convolution layer that is having batch normalization and ReLU activation function.
@@ -151,20 +164,7 @@ def encoder_block(input_layer, filters, strides):
     return output_layer
 ```
 
-### 1 Regular Conv Block
-
-1 regular convolution block is used, with batch normalization and Relu activation.
-
-```python
-def conv2d_batchnorm(input_layer, filters, kernel_size=3, strides=1):
-    output_layer = layers.Conv2D(filters=filters, kernel_size=kernel_size, strides=strides, 
-                      padding='same', activation='relu')(input_layer)
-    
-    output_layer = layers.BatchNormalization()(output_layer) 
-    return output_layer
-```
-
-### 3 Decoder Blocks
+### Decoder Blocks
 
 3 decoder blocks are used, each decoder block is consisting of Upsampler to collect input from a previous layer with smaller size, a concatenate function to add upsampled layer to the input of decoder then pass the resulting output to two layers of separable conv+batch normalization+ReLU activation function.
 
@@ -184,9 +184,9 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
     return output_layer
 ```
 
-### 1 Softmax activation layer using same padding
+### Softmax activation
 
-Last layer is with softmax activation:
+Last layer is regular convolution layer with softmax activation and same padding:
 
 ```python
     outputs = layers.Conv2D(num_classes, 1, activation='softmax', padding='same')(layer07)
@@ -194,7 +194,7 @@ Last layer is with softmax activation:
     
 ### the FCN model:
 
-Below is the code calling blocks for all layers, I have added a print function after each block to help showing the size of each layer in the model.
+Below is the code calling blocks explained above, I have added a print function after each block to help showing the size of each layer in the model.
 
 ```python
 def fcn_model(inputs, num_classes):
@@ -248,9 +248,10 @@ layer06 shape: (?, 80, 80, 64)   	Decoder Block 2
 layer07 shape: (?, 160, 160, 32) 	Decoder Block 3
 Outputs shape: (?, 160, 160, 3) 	Output Size in Pixel
 ```
-And the FCN model is as shown below:
+And the FCN model diagram is as shown below:
 
 <p align="center"> <img src="./docs/misc/fcn_diagram.png"> </p>
+
 
 # Selection of Hyper Parameters:
 
