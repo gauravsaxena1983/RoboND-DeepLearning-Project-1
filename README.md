@@ -42,34 +42,19 @@ One problem with this approach is that we **lose some resolution** every time we
 
 <p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
 
-Upsampling by a factor of 2 is generally used in the decoder blocks to recover resolution then add it with the previous layer output. Different factors of upsampling can be used if required.
+**Bilinear Upsampling** by a factor of 2 is generally used in the **decoder blocks** to recover resolution then add it together with the previous encoders layers outputs to get the required up-size. Different factors of upsampling can be used if required.
 
 **Batch normalization** is also used in each FCN layer and it is based on the idea that, instead of just normalizing the inputs to the network, we normalize the inputs to layers within the network. It's called "batch" normalization because during training, we normalize each layer's inputs by using the mean and variance of the values in the current mini-batch. Batch normalization presents us with few advantages: Networks train faster, higher learning rates,Simplifies the creation of deeper networks, and provides a bit of regularization.
 
+So, in summary FCN is consisting of the following components:
 
-## Bilinear Upsampling Layer
+* **Encoder blocks**: that will take inputs from previous layers, compress it down to a context losing in the way some of the resolution.
 
-Upsampling is used in the decoder block of the FCN, Upsampling by a factor of 2 is generally used, however we can try out different factors as well.
+* **1x1 Convolution block**: that will reduce depth and capture the global context of the scene.
 
-**FCN is comprised of an encoder and decoder blocks**;
+* **Decoder blocks**: that will take inputs from previous layers, decompress it, by up-sampling and adding inputs from previous encoder blocks to recover some of the lost information.
 
-<p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
-
-## Encoder Block
-
-**The Encoder** Takes an input image, aggregates features at multiple levels then generates a high-dimensional feature vector. 
-
-
-Why do we name it "encoder". Encoding, in general, means compressing with or without loss of information.
-Which case have we got here?
-Do we lose information?
-Which information do we lose?
-Which information does the decoder recover
-Which information is lost?
-
-## Decoder Block
-
-On the otherside of FCN, **The decoder** takes a highdimensional feature vector, decodes features aggregated by encoder at multiple levels and generates a semantic segmentation mask. 
+* **Softmax activation**: takes outputs from last decoder block and activate output pixels to indicate class and location of objects.
 
 
 # Software & Hardware used for training:
