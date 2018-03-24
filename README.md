@@ -57,7 +57,13 @@ So, in summary FCN is consisting of the following components:
 * **Softmax activation**: takes outputs from last decoder block and activate output pixels to indicate class and location of objects.
 
 
-# Software & Hardware used for training:
+# When and why we use FCN ?
+
+traditional convolutional networks (**CNN**) are having fully connected layers at the end (as shown above) hence cannot manage different input sizes, where as fully convolutional networks (**FCN**) can have **only convolutional layers** or layers which can manage different input sizes and are faster at that task. This is possible because output depends only on the local area of input; So input can be of arbitrary size and produce correspondingly-sized output with efficient inference and learning.
+
+
+
+# Software & Hardware used for Project training:
 
 In order to get the best learning from the lab I have decided to use both my own GPU enabled laptop hardware and AWS instance to do the learning.
 
@@ -99,10 +105,6 @@ The following frameworks and packages were installed on both Laptop & AWS instan
 For the Laptop installation, It took me very long time to figure out the right version of CUDA/cuDNN that will match the selected version of TensorFlow-GPU then later I found this link which clearly states the required CUDA/cuDNN versions:
 
 https://www.tensorflow.org/install/install_sources
-
-# When and why we use FCN ?
-
-traditional convolutional networks (**CNN**) are having fully connected layers at the end (as shown above) hence cannot manage different input sizes, where as fully convolutional networks (**FCN**) can have **only convolutional layers** or layers which can manage different input sizes and are faster at that task. This is possible because output depends only on the local area of input; So input can be of arbitrary size and produce correspondingly-sized output with efficient inference and learning.
 
 
 
