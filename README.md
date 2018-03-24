@@ -69,6 +69,7 @@ So, in summary FCN is consisting of the following components:
 
 traditional convolutional networks (**CNN**) are having fully connected layers at the end (as shown above) hence cannot manage different input sizes, where as fully convolutional networks (**FCN**) can have **only convolutional layers** or layers which can manage different input sizes and are faster at that task. This is possible because output depends only on the local area of input; So input can be of arbitrary size and produce correspondingly-sized output with efficient inference and learning.
 
+For this project we will be using FCN for semantic segmentation, however there are many other uses such us scene understanding in which multiple decoders are used to extract multiple meanings from the same trained model.
 
 
 # Software & Hardware used for Project training:
@@ -497,8 +498,6 @@ average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative)
 
 So the score is: **0.412441029555**
 
-
-
 # Testing Model in the Simulator
 
 I have selected the best model from the above mentioned and copied it to the code folder, started the simulator, then ran the following command to test the model in simulator:
@@ -510,6 +509,11 @@ The recording of the test is on the following YouTube link
 
 
 [![test video](http://img.youtube.com/vi/vR2EC16uoZU/default.jpg)](http://www.youtube.com/watch?v=vR2EC16uoZU)
+
+
+# Can we use the same model to track other objects ?
+
+The answer is yes, all what we need is to change the mask data and train again on the new target then use the same network to track  the new object. Network architecture will not change when there is change in target or size of input data. however we need to change the architecture if we wanted add more meanings such as (object distance from camera) or when we want to improve performance of network (such as adding more layers).
 
 # HTML version of model_training.ipynb notebook
 
