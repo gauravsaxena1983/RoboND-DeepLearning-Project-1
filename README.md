@@ -46,7 +46,7 @@ One problem with this approach is that we **lose some information** every time w
 
 <p align="center"> <img src="./docs/misc/max_pooling.png"> </p>
 
-To solve this problem we also **get some activation from previous layers** and sum/interpolate them together with the **up-sampled** outputs when **decoding** from the previous layer as shown in below diagram.
+To solve this problem we also get some activation from previous layers (What we call **skip connections**)and sum/interpolate them together with the **up-sampled** outputs when **decoding** from the previous layer as shown in below diagram.
 
 <p align="center"> <img src="./docs/misc/enc_dec.png"> </p>
 
