@@ -14,17 +14,21 @@ In this project we will train a fully convolutional (FCN) deep neural network to
 
 A normal convolutional neural network layer (**CNN layer**) with a **2D** Kernal size (5x5) looks like following:
 
-<p align="center"> <img src="./docs/misc/cnn.png"> </p>
+<p align="center"> <img src="./docs/misc/cnn_2d_layer.png"> </p>
 
 While **CNN layer** with a **3D** Kernal size (3x3x3) will look like this:
 
-<p align="center"> <img src="./docs/misc/conv_layer.png"> </p>
+<p align="center"> <img src="./docs/misc/cnn_3d_layer.png"> </p>
 
 In each layer (2D or 3D), the kernal will be moving accross inputs in a predefined stride and record a context (as output) in each move:
 
 <p align="center"> <img src="./docs/misc/kernal_move.png"> </p>
 
-A **Fully Convolutional neural network (FCN)** is a normal CNN, where the last fully connected layer is substituted by another 1x1 convolution layer with a large "receptive field". The idea here is to capture the global context of the scene and enable us to tell what are the objects and their approximate locations in the scene.
+a CNN with multiple CNN layers will look as following:
+
+CNNs are usually used to classify objects inside an image as shown above, the output is a class of car, dog, etc.
+
+A **Fully Convolutional neural network (FCN)** is a normal CNN, where the last fully connected layer (classification layer) is substituted by another 1x1 convolution layer with a large "receptive field". The idea here is to capture the global context of the scene and enable us to tell what are the objects **and their approximate locations** in the scene. The output will be scene segmentation not only object classfication as it is the case in CNN.
 
 <p align="center"> <img src="./docs/misc/fcn.png"> </p>
 
