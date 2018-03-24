@@ -100,6 +100,12 @@ For the Laptop installation, It took me very long time to figure out the right v
 
 https://www.tensorflow.org/install/install_sources
 
+# When and why we use FCN ?
+
+traditional convolutional networks (**CNN**) are having fully connected layers at the end (as shown above) hence cannot manage different input sizes, where as fully convolutional networks (**FCN**) can have **only convolutional layers** or layers which can manage different input sizes and are faster at that task. This is possible because output depends only on the local area of input; So input can be of arbitrary size and produce correspondingly-sized output with efficient inference and learning.
+
+
+
 # Data Recording
 
 I did not record any data from simulator, I was able to do all required steps using the provided Training, Validation, and Sample Evaluation Data.
