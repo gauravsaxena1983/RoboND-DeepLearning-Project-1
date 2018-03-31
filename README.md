@@ -485,6 +485,7 @@ number true positives: 121, number false positives: 4, number false negatives: 1
 
 We will be using the IoU to calculate the final score. **IoU** is Intersection over Union, where the Intersection set is an **AND** operation (pixels that are truly part of a class AND are classified as part of the class by the network) and the Union is an **OR** operation (pixels that are truly part of that class + pixels that are classified as part of that class by the network).
 
+<p align="center"> <img src="./docs/misc/iou.png"> </p>
 
 Sum all the true positives, etc from the three datasets to get a weight for the score: **0.7341490545050056**
 
