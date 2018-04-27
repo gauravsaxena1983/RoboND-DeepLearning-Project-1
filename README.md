@@ -509,7 +509,7 @@ $ python3 follower.py --pred_viz model_weights
 The recording of the test is on the following YouTube link
 
 
-[![test video](http://img.youtube.com/vi/vR2EC16uoZU/default.jpg)](http://www.youtube.com/watch?v=vR2EC16uoZU)
+[![test video](http://img.youtube.com/vi/vR2EC16uoZU/0.jpg)](http://www.youtube.com/watch?v=vR2EC16uoZU)
 
 
 # Can we use the same model to track other objects ?
